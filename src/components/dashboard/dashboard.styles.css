@@ -1,0 +1,15 @@
+.sidebar li{
+  padding: 10%;
+  list-style: none;
+  font-size:25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sidebar li:hover{
+    text-decoration: underline;
+}
+.logo{
+  /* margin: 10%;
+  margin-left: 30%; */
+  color:white;
+}
