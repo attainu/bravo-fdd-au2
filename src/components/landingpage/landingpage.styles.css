@@ -1,0 +1,105 @@
+body {
+  background-color: black;
+}
+
+.header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.parallax-wrapper {
+  /* width: 100vw; */
+  height: 100vh;
+  /* padding-top:20vh; */
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+.parallax-wrapper::before {
+  content: "";
+  /* width: 100vw; */
+  height: 100vh;
+  top: 0;
+  left: 0;
+  /* background-image: url("https://i.ibb.co/DGNpPnC/signbackground-v1.jpg"); */
+  position: absolute;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2);
+}
+
+.regular-wrapper {
+  /* width: 100vw; */
+  height: 100vh;
+  padding-top: 30vh;
+  padding-right: 0%;
+  /* background-image: url("http://www.wherelovegrows.org/wp-content/uploads/2014/01/1920x1080-light-blue-solid-color-background.jpg"); */
+  z-index: 2;
+  position: relative;
+}
+
+.parallax-wrapper2 {
+  /* width: 100vw; */
+  /* height:100vh; */
+  /* padding-top:20vh; */
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  background-color: black;
+}
+
+.parallax-wrapper2::before {
+  content: "";
+  /* width: 100vw; */
+  /* height: 100vh; */
+  top: 0;
+  left: 0;
+  /* background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1002&q=80"); */
+  background-color: black;
+  position: absolute;
+  z-index: 10;
+  transform: translateZ(-1px) scale(2);
+  background-size: cover;
+}
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("https://source.unsplash.com/XT5OInaElMw/1600x900") black
+      no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
