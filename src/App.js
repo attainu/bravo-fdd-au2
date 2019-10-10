@@ -1,18 +1,30 @@
 import React from "react";
+import {connect} from 'react-redux';
 import "./App.css";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router , Route, Switch } from "react-router-dom";
 import landingpage from "./components/landingpage/landingpage";
 import Dashboard from "./components/dashboard/dashboard";
 
-function App() {
+class App extends React.Component{
+  
+  render(){
   return (
     <div className="App">
-      <Switch>
+      <Router>
+        <Switch>
         <Route exact path="/" component={landingpage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-      </Switch>
+        <Route path="/dashboard" component = {Dashboard}/>
+        </Switch>
+      </Router>
     </div>
   );
+  }
 }
 
-export default App;
+function mapStateToProps(state){
+  return{
+    user: state.loginReducer.loggedIn
+  }
+}
+
+export default connect(mapStateToProps)(App);
