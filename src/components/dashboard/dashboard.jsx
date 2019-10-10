@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Redirect , useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { MDBRow, MDBCol , MDBBreadcrumb , MDBBreadcrumbItem} from "mdbreact";
 import "../dashboard/dashboard.styles.css";
 import FooterPage from "../footer/footer.component";
@@ -52,11 +52,11 @@ const routes = [
 ]
 
 class Dashboard extends React.Component {
-  render() {
+  render(props) {
     //  console.log(firebase.auth())
-    let loggedIn = JSON.parse(localStorage.getItem('user')); 
-        console.log(loggedIn);
-        if(loggedIn == undefined){
+    let loggedIn = this.props.user; 
+        console.log("dashboard class",loggedIn);
+        if(!loggedIn){
             return <Redirect to="/"/>
         }
     return (
@@ -123,8 +123,7 @@ class Dashboard extends React.Component {
 function mapStateToProps(state){
   console.log("dashboard state",state);
   return{
-    
-    user: state.loginReducer.loggedIN
+    user: state.loginReducer.loggedIn
   }
 }
 

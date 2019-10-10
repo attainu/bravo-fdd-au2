@@ -1,26 +1,30 @@
 import React from "react";
 import {connect} from 'react-redux';
 import "./App.css";
-import { BrowserRouter as Router , Route, Switch, NavLink , Redirect } from "react-router-dom";
+import { BrowserRouter as Router , Route, Switch } from "react-router-dom";
 import landingpage from "./components/landingpage/landingpage";
 import Dashboard from "./components/dashboard/dashboard";
-import PrivateRoute from "./components/privateroute.componet";
 
 class App extends React.Component{
-
-  
   
   render(){
   return (
     <div className="App">
       <Router>
+        <Switch>
         <Route exact path="/" component={landingpage} />
-        <PrivateRoute path="/dashboard" component = {Dashboard}/>
-        {/* {this.doRedirect()} */}
+        <Route path="/dashboard" component = {Dashboard}/>
+        </Switch>
       </Router>
     </div>
   );
   }
 }
 
-export default connect()(App);
+function mapStateToProps(state){
+  return{
+    user: state.loginReducer.loggedIn
+  }
+}
+
+export default connect(mapStateToProps)(App);

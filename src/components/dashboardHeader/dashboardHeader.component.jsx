@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { connect} from 'react-redux';
 import { MDBNavbar,MDBNavbarBrand, MDBNavbarNav, MDBCollapse, MDBNavItem,MDBNavbarToggler,MDBBtn,MDBIcon,MDBDropdown,MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem} from 'mdbreact';
 import { auth } from "../../firebase/firebase.utils";
 import { logoutUser } from '../../actions/loginAction';
 
 
 class DashboardHeader extends React.Component{
+
     constructor(props) {
         super(props);
         this.state = {

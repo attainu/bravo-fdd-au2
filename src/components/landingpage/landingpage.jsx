@@ -1,9 +1,8 @@
 import React from "react";
-import { connect , useDispatch } from 'react-redux';
-import { Redirect,Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import "../landingpage/landingpage.styles.css";
 import FooterPage from "../footer/footer.component";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
 import { MDBBtn, MDBIcon } from "mdbreact";
 import { auth, provider} from "../../firebase/firebase.utils";
 import { loginUser } from '../../actions/loginAction';
@@ -44,10 +43,10 @@ class LandingPage extends React.Component{
   }
 
   render(){
-    let loggedIn = JSON.parse(localStorage.getItem('user'));
-    console.log(loggedIn);
+    let loggedIn = this.props.user;
+    console.log("landing page render",loggedIn);
     if(loggedIn){
-      return <Redirect to="/dashboard" />
+      return <Redirect exact to="/dashboard" />
     }
   return (
     
@@ -101,7 +100,7 @@ class LandingPage extends React.Component{
 
 function mapStateToProps(state){
   return{
-    user: state.loginReducer.loggedIN
+    user: state.loginReducer.loggedIn
   }
 }
 
