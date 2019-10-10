@@ -1,11 +1,56 @@
 import React from "react";
+import { connect , useDispatch } from 'react-redux';
+import { Redirect,Link } from 'react-router-dom';
 import "../landingpage/landingpage.styles.css";
 import FooterPage from "../footer/footer.component";
 import { signInWithGoogle } from "../../firebase/firebase.utils";
 import { MDBBtn, MDBIcon } from "mdbreact";
+import { auth, provider} from "../../firebase/firebase.utils";
+import { loginUser } from '../../actions/loginAction';
 
-function LandingPage() {
+class LandingPage extends React.Component{
+  constructor(props){
+    super(props)
+    this.LoginwithGoogle = this.LoginwithGoogle.bind(this);
+    // this.doRedirect = this.doRedirect.bind(this);
+  }
+  
+   async LoginwithGoogle(){
+    provider.setCustomParameters({ prompt: "select_account" });
+    const result = await auth.signInWithPopup(provider);
+    console.log(result);
+    localStorage.setItem('user',JSON.stringify(result.user.providerData[0]));
+    this.props.doLogin();
+    //this.doRedirect()
+  }
+
+  // doRedirect(){
+  //   let loggedIn = localStorage.getItem('user');
+
+  //   if(loggedIn){
+  //     return <Redirect to="/dashboard" />
+  //   }else{
+  //     return <Redirect to="/"/>
+  //   }
+  // }
+
+  componentDidMount(){
+    
+    // auth.onAuthStateChanged(user => {
+    //   console.log(user)
+    //    localStorage.setItem('user',JSON.stringify(user.providerData[0]));
+    //    return <Redirect to='/dashboard'/>
+    //   });
+  }
+
+  render(){
+    let loggedIn = JSON.parse(localStorage.getItem('user'));
+    console.log(loggedIn);
+    if(loggedIn){
+      return <Redirect to="/dashboard" />
+    }
   return (
+    
     <div className="landingpage">
       <div className="header parallax-wrapper">
         <div className="overlay">
@@ -13,11 +58,13 @@ function LandingPage() {
             color="primary"
             size="lg"
             className="mr-3 mt-3 float-right text-white rounded-pill"
-            onClick={signInWithGoogle}
+            onClick={this.LoginwithGoogle}
+          
           >
             <MDBIcon icon="sign-in" className="mr-3" />
             <strong>Login</strong>
           </MDBBtn>
+         
         </div>
         <video
           playsInline="playsinline"
@@ -44,60 +91,26 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      {/* <div className="parallax-wrapper2" >
-      <div className="card-deck p-5">
-        <div
-          className="card bg-dark text-white shadow-sm mb-5 rounded"
-          style={{ width: "28rem" }}
-        >
-          <img
-            src="https://media3.giphy.com/media/eI7NnalNIhT7q/giphy.gif"
-            className="card-img-top"
-            alt="..."
-            width="250px"
-            height="350px"
-          />
-          <div className="card-body">
-            <h3 className="card-title text-center display-4">Play</h3>
-          </div>
-        </div>
-        <div
-          className="card bg-dark text-white shadow-sm mb-5 rounded"
-          style={{ width: "28rem" }}
-        >
-          <img
-            src="https://cdn.dribbble.com/users/318646/screenshots/3492767/headphones.gif"
-            className="card-img-top"
-            alt="..."
-            width="250px"
-            height="350px"
-          />
-          <div className="card-body">
-            <h3 className="card-title text-center display-4">Listen</h3>
-          </div>
-        </div>
-        <div
-          className="card bg-dark text-white shadow-sm mb-5 rounded"
-          style={{ width: "28rem" }}
-        >
-          <img
-            src="https://media1.giphy.com/media/5xtDarmSceWsGyD4VeE/source.gif"
-            className="card-img-top"
-            alt="..."
-            width="250px"
-            height="350px"
-          />
-          <div className="card-body">
-            <h3 className="card-title text-center display-4">Enjoy</h3>
-          </div>
-        </div>
-      </div>
-      </div> */}
       <div className="footer">
         <FooterPage />
       </div>
     </div>
-  );
+   );
+ }
 }
 
-export default LandingPage;
+function mapStateToProps(state){
+  return{
+    user: state.loginReducer.loggedIN
+  }
+}
+
+function mapActionToProps(dispatch){
+  return{
+    doLogin:function(){
+      dispatch(loginUser())
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapActionToProps)(LandingPage);

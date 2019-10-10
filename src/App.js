@@ -1,18 +1,26 @@
 import React from "react";
+import {connect} from 'react-redux';
 import "./App.css";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router , Route, Switch, NavLink , Redirect } from "react-router-dom";
 import landingpage from "./components/landingpage/landingpage";
 import Dashboard from "./components/dashboard/dashboard";
+import PrivateRoute from "./components/privateroute.componet";
 
-function App() {
+class App extends React.Component{
+
+  
+  
+  render(){
   return (
     <div className="App">
-      <Switch>
+      <Router>
         <Route exact path="/" component={landingpage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-      </Switch>
+        <PrivateRoute path="/dashboard" component = {Dashboard}/>
+        {/* {this.doRedirect()} */}
+      </Router>
     </div>
   );
+  }
 }
 
-export default App;
+export default connect()(App);

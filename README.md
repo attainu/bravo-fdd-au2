@@ -1,4 +1,4 @@
-# MeloMac - Music Streaming App Using Spotify API
+# MeloMac - Music Streaming App 
 
 ## Step 1
 
@@ -6,4 +6,8 @@ Creation of Landing Page
 
 ## Step 2 
 
-Implementation of Spotify Oauth 2.0 to get access token and refresh token.
+Implementation of Firebase Authentication to Authenticate User while login .
+
+## Step 3 
+
+Creation of Dashboard Page and protecting the Dashboard route.

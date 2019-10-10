@@ -3,7 +3,7 @@ import React from 'react'
 function Songs() {
     return (
         <div>
-            Songs
+            <h3 className="display-3 text-dark mx-auto"> Show songs here</h3>
         </div>
     )
 }
