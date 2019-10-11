@@ -1,32 +1,13 @@
-# bravo-fdd-au2
+# MeloMac - Music Streaming App 
 
-# Steps
+## Step 1
 
-At First Run the MainFile After that Run the ServerFile
+Creation of Landing Page 
 
-# MainFiles
+## Step 2 
 
-Right click on MainFiles folder and open in terminal
+Implementation of Firebase Authentication to Authenticate User while login .
 
-Write the following commands:-
+## Step 3 
 
-```
-npm i
-npm start
-```
-
-# Server Files
-
-Right click on serverFiles folder and open in terminal 
-
-Write the following commands:-
-
-```
-npm i
-export SPOTIFY_CLIENT_ID=XXXX
-export SPOTIFY_CLIENT_SECRET=YYYY
-npm start
-```
-
-
-
+Creation of Dashboard Page and protecting the Dashboard route.
