@@ -11,8 +11,8 @@ import Artist from "../artist/artist.component";
 import Songs from "../songs/songs.component";
 import Search from "../search/search.component";
 import Radio from "../radio/radio.component";
-import apiCall from '../../api/api';
-import {Action} from '../../actions/Action';
+import ArtistInfo from '../artist/artistInfo'
+
 
 const routes = [
   {
@@ -20,7 +20,7 @@ const routes = [
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="primary-color text-center" className="ml-3 rounded">
                   <MDBBreadcrumbItem className="text-center">DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-dark text-center">Artist</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Artist</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Artist/>
   },
@@ -29,7 +29,7 @@ const routes = [
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-dark">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Songs/>
   },
@@ -50,7 +50,19 @@ const routes = [
                   <MDBBreadcrumbItem active className="text-white">Radio</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Radio/>
+  },
+  {
+    path:"/dashboard/Artist/artistInfo",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Artist</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">ArtistInfo</MDBBreadcrumbItem>
+
+                </MDBBreadcrumb>,
+    main:()=><ArtistInfo/>
   }
+
 ]
 
 class Dashboard extends React.Component {
@@ -77,9 +89,8 @@ class Dashboard extends React.Component {
               </h1>
           <ul className="sidebar flex-column text-center p-5">
             <li>
-            <Link to="/dashboard/artist"onClick={this.props.ShowArtist} className="nav-link text-white">Artist</Link>
-              
-              </li>
+            <Link to="/dashboard/artist" className="nav-link text-white">Artist</Link>
+            </li>
             <li>
             <Link to="/dashboard/songs" className="nav-link text-white">Songs</Link>
             </li>
@@ -123,20 +134,7 @@ class Dashboard extends React.Component {
     );
   }
 }
-function mapActionToProps(dispatch) {
-  return {
-    ShowArtist: function() {
-        // console.log("call")
-          apiCall("Artist")
-  .then(
-    (result) => {
-  // console.log(result)
-  // result.artists.artist.map((item)=>console.log(item.name))
-      dispatch(Action(result.artists))
 
-
-      })
-  }}}
 
 function mapStateToProps(state){
   console.log("dashboard state",state);
@@ -145,4 +143,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps,mapActionToProps)(Dashboard);
+export default connect(mapStateToProps)(Dashboard);

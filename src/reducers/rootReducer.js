@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import loginReducer from './loginReducer';
-import Reducer from './Reducer';
+import ArtistReducer from './ArtistReducer';
 
 
 export default combineReducers({
    loginReducer,
-   Reducer
+   ArtistReducer
 });
