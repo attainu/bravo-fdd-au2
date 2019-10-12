@@ -15,11 +15,11 @@ import ArtistInfo from '../artist/artistInfo'
 
 
 const routes = [
-  {
+ {
     path:"/dashboard/artist",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color text-center" className="ml-3 rounded">
-                  <MDBBreadcrumbItem className="text-center">DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark text-center" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Artist</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Artist/>
@@ -27,17 +27,16 @@ const routes = [
   {
     path:"/dashboard/songs",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Songs/>
   },
   {
     path:"/dashboard/search",
-    exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Search</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Search/>
@@ -45,8 +44,8 @@ const routes = [
   {
     path:"/dashboard/radio",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Radio</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Radio/>
@@ -78,7 +77,7 @@ class Dashboard extends React.Component {
       <div>
         <MDBRow>
         <MDBCol className="text-white bg-dark shadow-lg">
-          <Logo classname="mx-auto" style={{width:"12rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
+          <Logo style={{width:"12rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
           <h1  className="text-center"
                 style={{
                   fontFamily: "Quicksand, sans-serif",
