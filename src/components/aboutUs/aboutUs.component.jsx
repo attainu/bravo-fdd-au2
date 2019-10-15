@@ -90,7 +90,8 @@ class AboutUsPage extends Component {
       <div>
         <header>
           <Router>
-            <MDBNavbar color="indigo" fixed="top" dark expand="md">
+          <MDBNavbar color="elegant-color-dark" fixed="top" dark expand="md" scrolling>
+
               <Logo classname="mx-auto" style={{ width: "2rem", height: "2rem", marginLeft: "4rem", marginTop: "0.5rem", marginRight: "0.5rem" }} />
 
               <MDBNavbarBrand>
@@ -107,7 +108,7 @@ class AboutUsPage extends Component {
             <div className="col"></div>
             <div className="col" style={{ marginTop: "8rem" }}>
               <h3 className="text-center"> <b>hiii</b></h3>
-              <p>We are the students of attainU.As we all know there is no quality in our education system....there are many engineers passing out from colleges with no subject and practical knowledge</p>
+              <p>We are the students of AttainU.As we all know there is no quality in our education system....there are many engineers passing out from colleges with no subject and practical knowledge</p>
               <p>AttainU is the best place where a student can get command on the topics what he/she learns...this is because of the teaching here and the staff at attainU are very educated and they will consider each student and train us individually</p>
             </div>
             <div className="col"></div>

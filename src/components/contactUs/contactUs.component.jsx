@@ -56,7 +56,7 @@ class ContactUsPage extends React.Component {
             <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
-                <MDBCardTitle>Suraj Kawale</MDBCardTitle>
+                <MDBCardTitle>Suraj</MDBCardTitle>
                 <MDBCardText>
                   Some quick example text to build on the card title and make
                   up the bulk of the card&apos;s content.
@@ -67,7 +67,7 @@ class ContactUsPage extends React.Component {
             <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
-                <MDBCardTitle>Lakshmikanth Reddy Balam</MDBCardTitle>
+                <MDBCardTitle>Lakshmikanth</MDBCardTitle>
                 <MDBCardText>
                   Some quick example text to build on the card title and make
                   up the bulk of the card&apos;s content.
@@ -78,7 +78,7 @@ class ContactUsPage extends React.Component {
             <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
-                <MDBCardTitle>Harika Thipparthi</MDBCardTitle>
+                <MDBCardTitle>Harika</MDBCardTitle>
                 <MDBCardText>
                   Some quick example text to build on the card title and make
                   up the bulk of the card&apos;s content.
@@ -89,7 +89,7 @@ class ContactUsPage extends React.Component {
             <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
-                <MDBCardTitle>Naveen Bandela</MDBCardTitle>
+                <MDBCardTitle>Naveen</MDBCardTitle>
                 <MDBCardText>
                   Some quick example text to build on the card title and make
                   up the bulk of the card&apos;s content.
@@ -100,7 +100,7 @@ class ContactUsPage extends React.Component {
             <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
-                <MDBCardTitle>Yash pal</MDBCardTitle>
+                <MDBCardTitle>Yash</MDBCardTitle>
                 <MDBCardText>
                   Some quick example text to build on the card title and make
                   up the bulk of the card&apos;s content.
@@ -135,15 +135,7 @@ class ContactUsPage extends React.Component {
                   error="wrong"
                   success="right"
                 />
-                <MDBInput
-                  label="Company"
-                  icon="exclamation-triangle"
-                  group
-                  type="text"
-                  validate
-                  error="wrong"
-                  success="right"
-                />
+    
                 <MDBInput
                   label="Message"
                   icon="pencil"

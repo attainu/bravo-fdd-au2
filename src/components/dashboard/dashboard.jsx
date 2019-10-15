@@ -12,6 +12,7 @@ import Songs from "../songs/songs.component";
 import Search from "../search/search.component";
 import Radio from "../radio/radio.component";
 import ArtistInfo from '../artist/artistInfo'
+import Profile from "../profile/profile.component";
 
 
 const routes = [
@@ -60,6 +61,16 @@ const routes = [
 
                 </MDBBreadcrumb>,
     main:()=><ArtistInfo/>
+  },
+  {
+    path:"/dashboard/profile",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Profile</MDBBreadcrumbItem>
+
+                </MDBBreadcrumb>,
+    main:()=><Profile/>
   }
 
 ]
