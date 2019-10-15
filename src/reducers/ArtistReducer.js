@@ -1,4 +1,5 @@
-function Reducer(state={ArtistData:[],ArtistInfo:null},action){
+function Reducer(state={ArtistData:[],ArtistInfo:null,ArtistImage:null,ArtistTopTracks:null,url:"https://open.spotify.com/embed/track/0DHHSFmKZIU3miIzkm4Sqz"
+,provider:"spotify"},action){
     switch(action.type){
 
 
@@ -13,8 +14,18 @@ return {
 
 return {
     ...state,
-    ArtistInfo: action.ArtistInfo
+    ArtistInfo: action.ArtistInfo,
+    ArtistImage:action.ArtistImage,
+    ArtistTopTracks:action.ArtistTopTracks
         }
+
+        case "Player":
+
+            return {
+                ...state,
+       url:action.url,
+       provider:action.provider
+                    }
 
         
         default : return state;

@@ -5,14 +5,25 @@ ArtistData:result
     }
         
 }
-export function getInfo(result){
+export function getInfo(ArtistInfo,ArtistImage,ArtistTopTracks){
 // console.log(result)
     return{
     type:"getinfoAction",
-    ArtistInfo:result
+    ArtistInfo:ArtistInfo,
+    ArtistImage:ArtistImage,
+    ArtistTopTracks:ArtistTopTracks
     }
         
 }
+export function Player(url,provider){
+    console.log(provider)
+        return{
+        type:"Player",
+        url:url,
+        provider:provider
+        }
+            
+    }
 
     
     

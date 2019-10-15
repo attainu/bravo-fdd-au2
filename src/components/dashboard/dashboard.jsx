@@ -76,9 +76,9 @@ class Dashboard extends React.Component {
     return (
       <Router>
       <div>
-        <MDBRow>
+        <MDBRow style={{width:"100vw"}}>
         <MDBCol className="text-white bg-dark shadow-lg">
-          <Logo classname="mx-auto" style={{width:"12rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
+          <Logo classname="mx-auto" style={{width:"10rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
           <h1  className="text-center"
                 style={{
                   fontFamily: "Quicksand, sans-serif",
