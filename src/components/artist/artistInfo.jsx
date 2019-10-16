@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import {ArtistGetSongs,ArtistGetPlayer} from '../../api'
 import {Player} from '../../actions/ArtistAction'
 import './artist.css'
+import ReadMoreReact from 'read-more-react';
 
 class ArtistInfo extends React.Component {
-  
    render() { 
      if(this.props.ArtistInfo==null){
 return <h1>Get Artist Name</h1>
@@ -38,13 +38,21 @@ return <h1>Get Artist Name</h1>
 {iframe}
       <div class="container overflow-auto text-dark" style={{height:"600px"}}>
     <div class="fb-profile text-dark ">
-        <img align="left"  style={{height:"280px",width:"100%"}} class="fb-image-lg" src="http://getwallpapers.com/wallpaper/full/1/d/d/504436.jpg"alt="Profile image example"/>
+        <img align="left"  style={{height:"280px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
         <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="Profile image example"/>
    
         
     </div>
     <h1 >{this.props.ArtistInfo.name}</h1>
-    <p>Content :- {this.props.ArtistInfo.bio.content}</p>
+    <ReadMoreReact text={this.props.ArtistInfo.bio.content}
+            min={80}
+            ideal={100}
+            max={200}          
+            readMoreText={<button>Read More</button>}
+            />
+
+
+
 <div><h1>Bio :- </h1></div>
 <div>Published_Date :- {this.props.ArtistInfo.bio.published} </div>
 <div>Summary :- {this.props.ArtistInfo.bio.summary} </div>
