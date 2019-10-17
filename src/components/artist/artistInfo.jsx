@@ -4,6 +4,11 @@ import {ArtistGetSongs,ArtistGetPlayer} from '../../api'
 import {Player} from '../../actions/ArtistAction'
 import './artist.css'
 import ReadMoreReact from 'read-more-react';
+import ReadMoreAndLess from 'react-read-more-less';
+import {
+  MDBIcon
+} from "mdbreact";
+
 
 class ArtistInfo extends React.Component {
    render() { 
@@ -44,22 +49,41 @@ return <h1>Get Artist Name</h1>
         
     </div>
     <h1 >{this.props.ArtistInfo.name}</h1>
-    <ReadMoreReact text={this.props.ArtistInfo.bio.content}
-            min={80}
-            ideal={100}
-            max={200}          
-            readMoreText={<button>Read More</button>}
-            />
+    <ReadMoreAndLess
+                ref={this.ReadMore}
+                className="read-more-content"
+                charLimit={300}
+                readMoreText="Read more"
+                readLessText="Read less"
+            >
+                {this.props.ArtistInfo.bio.content}
+            </ReadMoreAndLess>
 
 
+   <br/>         
+<div><h3>Published_Date :- </h3>{this.props.ArtistInfo.bio.published} </div>
+<br/>         
 
-<div><h1>Bio :- </h1></div>
-<div>Published_Date :- {this.props.ArtistInfo.bio.published} </div>
-<div>Summary :- {this.props.ArtistInfo.bio.summary} </div>
-<div><h1>Similar Artist :-  </h1></div>
+<div> <h3>Summary :- </h3>
+<ReadMoreAndLess
+                ref={this.ReadMore}
+                className="read-more-content"
+                charLimit={300}
+                readMoreText="Read more"
+                readLessText="Read less"
+            >
+                {this.props.ArtistInfo.bio.summary}
+            </ReadMoreAndLess>
+
+ </div>
+ <br/>
+<div><h3>Similar Artist :-  </h3></div>
 {this.props.ArtistInfo.similar.artist.map((item)=>
-  <div>
- <a className="text-primary" onClick={this.props.getSongs.bind(this,item.name)} >{item.name}</a> 
+<div class="list-group">
+ <a class="list-group-item list-group-item-action"onClick={this.props.getSongs.bind(this,item.name)} >
+ <MDBIcon icon="play-circle" className="mr-2" />
+ 
+ {item.name}</a> 
  </div>
 
 )}
@@ -71,13 +95,19 @@ return <h1>Get Artist Name</h1>
 {this.props.ArtistInfo.tags.tag.map((item)=>
   <div>{item.name}</div>
   )} */}
-<div><h1>Top Tracks : - </h1></div>
-<div>
+  <br/>
+<div><h3>Top Tracks : - </h3></div>
+<div class="list-group">
 {this.props.ArtistTopTracks.map((item)=>
-  <div >
- <a className="text-primary" onClick={this.props.getSongs.bind(this,item.name)}>{item.name}</a> </div>
-  )}
+  <a href="#" onClick={this.props.getSongs.bind(this,item.name)} class="list-group-item list-group-item-action">
+<MDBIcon icon="play-circle" className="mr-2" /> {item.name}
+  </a>
+   )}
 </div>
+
+
+ 
+
   
 </div>
   
