@@ -11,7 +11,7 @@ export function fetchSonglink(id){
 }
 
 export function ArtistData(query){
-  let url = `https://raw.githubusercontent.com/attainu/bravo-fdd-au2/yashpal/data/artist.json?token=AI7UY747IBONGDFXKIOGSIS5VFJ42`
+  let url = `https://raw.githubusercontent.com/attainu/bravo-fdd-au2/yashpal/data/artist.json?token=AI7UY746XVYGK7DPAF2RRJC5WBR7W`
   return fetch(url)
          .then(data => data.json());
 }
