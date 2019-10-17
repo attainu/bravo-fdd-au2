@@ -1,11 +1,24 @@
 import React from 'react'
+import './songs.css';
+import GlobalTop from './globalTop';
+import India from './indiaTop';
+import Tags from './tags';
+class Songs extends React.Component {
 
-function Songs() {
+    render(){
     return (
         <div>
-            <h3 className="display-3 text-dark mx-auto"> Show songs here</h3>
+        <div className="text-dark mx-auto d-print-block ">
+        <div className="overflow-auto" style={{height:"600px"}}>
+            <GlobalTop />
+            <India />
+            <Tags />
+        </div>  
         </div>
+      
+    </div>
     )
+    }
 }
 
 export default Songs;
