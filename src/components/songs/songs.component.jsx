@@ -8,15 +8,14 @@ class Songs extends React.Component {
     render(){
     return (
         <div>
-        <div className="text-dark mx-auto d-print-block ">
-        <div className="overflow-auto" style={{height:"600px"}}>
+        <h3 className="display-3 text-white mx-auto "> Top Artist </h3>
+        <div className="overflow-auto text-dark" style={{height:"600px"}}>
             <GlobalTop />
             <India />
             <Tags />
         </div>  
         </div>
-      
-    </div>
+ 
     )
     }
 }

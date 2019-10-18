@@ -2,10 +2,12 @@ import React from 'react'
 import './songs.css';
 import { connect }  from 'react-redux';
 import  { getIndiaTop50Action , get50IndImagesAction, getSongLink } from '../../actions/songsActions.js';
+import  { Player} from '../../actions/ArtistAction';
+
 import Img from 'react-image';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import {fetchSearchResults} from '../../api';
-import SongPlayer from "./songsPlayer";
+import SongPlayer from "../SongPlayer";
 
 class IndiaMore extends React.Component {
 
@@ -15,12 +17,14 @@ class IndiaMore extends React.Component {
     
     render(){
     return (
-        <div className="global-more">
-                <div className="container">
-                    <div className="title">
+        <div className="global-more" >
+                <div className="container" >
+                    <div className="title" >
+                    <SongPlayer />
+
                         <h2>India Top50</h2>
                     </div>
-                    <div className="scrollbar scrollbar-lady-lips scroll">
+                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
                     <table class="table table-borderless table-hover table1">
                         {this.props.charts ? (<tbody>
                         {this.props.charts.track.map((item, i) => 
@@ -37,9 +41,8 @@ class IndiaMore extends React.Component {
                         </tbody>) : (<div>Loading....</div>)}
                     </table>
                     </div>
-                    
                 </div>
-                <SongPlayer />
+              
             </div>
     )
     }
@@ -80,7 +83,7 @@ function mapDispatchToProps(dispatch){
                 fetch(url)
                 .then(response => response.json())
                 .then(result => 
-                    dispatch(getSongLink(result.response.song.media)))
+                    dispatch(Player(result.response.song.media)))
                 
             })
         }

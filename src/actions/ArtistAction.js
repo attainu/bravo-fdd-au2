@@ -15,12 +15,11 @@ export function getInfo(ArtistInfo,ArtistImage,ArtistTopTracks){
     }
         
 }
-export function Player(url,provider){
-    console.log(provider)
+export function Player(url){
+    // console.log(provider)
         return{
         type:"Player",
-        url:url,
-        provider:provider
+        url:url
         }
             
     }

@@ -8,6 +8,7 @@ import ReadMoreAndLess from 'react-read-more-less';
 import {
   MDBIcon
 } from "mdbreact";
+import SongPlayer from '../SongPlayer'
 
 
 class ArtistInfo extends React.Component {
@@ -15,32 +16,13 @@ class ArtistInfo extends React.Component {
      if(this.props.ArtistInfo==null){
 return <h1>Get Artist Name</h1>
      }else{
-    if(this.props.provider==="spotify"){
-     var iframe= <iframe src={this.props.url} width="100%" height="80" frameborder="0" 
-     allowtransparency="true" allow="encrypted-media"></iframe>
-    }
-    else if(this.props.provider==="soundcloud"){
-      // console.log("https://w.soundcloud.com/player/?url="+this.props.url)
-      var iframe=  <iframe id="sc-widget" src={"https://w.soundcloud.com/player/?url="+this.props.url}
-       width="100%" height="80" scrolling="no" frameborder="no"></iframe>
-      
-    }
-    else if(this.props.provider==="youtube"){
-      var iframe= <iframe width="100%" height="200" src={this.props.url} 
-      frameborder="0" 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      ></iframe>    
-
-    }
-
- 
     return (  
       
       <div>
       <h3 className="display-3 text-dark mx-auto "> Artist Info</h3>
       <div className="text-dark mx-auto d-print-block ">
       <div>
-{iframe}
+<SongPlayer/>
       <div class="container overflow-auto text-dark" style={{height:"600px"}}>
     <div class="fb-profile text-dark ">
         <img align="left"  style={{height:"280px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
@@ -154,23 +136,10 @@ function mapStateToProps(state){
         if(PlayerResult.response.song.media.length===0){
 
         }
-        else if(PlayerResult.response.song.media[0].provider==="spotify"){
-        let str=PlayerResult.response.song.media[0].url
-        // console.log(PlayerResult)
-// console.log(str.slice(0,25)+"embed"+str.slice(24))
-         dispatch(Player((str.slice(0,25)+"embed"+str.slice(24)),PlayerResult.response.song.media[0].provider))
-        }
-        else if(PlayerResult.response.song.media[0].provider==="soundcloud"){
-        let str=PlayerResult.response.song.media[0].url
+else{
+         dispatch(Player(PlayerResult.response.song.media))
 
-         dispatch(Player(str,PlayerResult.response.song.media[0].provider))
-
-        }
-        else if(PlayerResult.response.song.media[0].provider==="youtube"){
-          let str=PlayerResult.response.song.media[0].url
-// console.log((str.slice(0,23)+"embed/"+str.slice(31)))
-          dispatch(Player((str.slice(0,23)+"embed/"+str.slice(31)),PlayerResult.response.song.media[0].provider))
-        }
+}
       }
       )}
         }
