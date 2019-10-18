@@ -5,7 +5,9 @@ import  { getTop50Action , getSongs, getSongLink } from '../../actions/songsActi
 import Img from 'react-image';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import {fetchSearchResults} from '../../api';
-import SongPlayer from "./songsPlayer";
+import SongPlayer from "../SongPlayer";
+import  { Player} from '../../actions/ArtistAction';
+
 
 class GlobalMore extends React.Component {
 
@@ -23,7 +25,7 @@ class GlobalMore extends React.Component {
                     <SongPlayer />
                     </div>
               
-                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%",height:"380px"}}>
+                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
                     <table class="table table-borderless table-hover table1">
                         {this.props.charts ? (<tbody>
                         {this.props.charts.track.map((item, i) => 
@@ -83,7 +85,7 @@ function mapDispatchToProps(dispatch){
                 fetch(url)
                 .then(response => response.json())
                 .then(result => 
-                    dispatch(getSongLink(result.response.song.media)))
+                    dispatch(Player(result.response.song.media)))
                 
             })
         }

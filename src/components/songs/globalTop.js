@@ -5,6 +5,7 @@ import  { getTopChartsAction , getNames } from '../../actions/songsActions.js';
 import Img from 'react-image';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 
+
 class GlobalTop extends React.Component {
 
     componentDidMount(){
