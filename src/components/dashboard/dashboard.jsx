@@ -13,7 +13,10 @@ import Search from "../search/search.component";
 import Radio from "../radio/radio.component";
 import ArtistInfo from '../artist/artistInfo'
 import Profile from "../profile/profile.component";
-
+import MoreTags from '../songs/more-tags';
+import IndiaMore from '../songs/india50-more';
+import GlobalMore from '../songs/global-more';
+import TagSongs from "../songs/tagSonga";
 
 const routes = [
  {
@@ -63,6 +66,7 @@ const routes = [
     main:()=><ArtistInfo/>
   },
   {
+
     path:"/dashboard/profile",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
@@ -71,6 +75,43 @@ const routes = [
 
                 </MDBBreadcrumb>,
     main:()=><Profile/>
+  },
+  {
+    path:"/dashboard/songs/allTags",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Songs/Tags</MDBBreadcrumbItem>
+                </MDBBreadcrumb>,
+    main:()=><MoreTags />
+  },
+  {
+    path:"/dashboard/songs/IndiaTop50",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Songs/India Top 50</MDBBreadcrumbItem>
+                </MDBBreadcrumb>,
+    main:()=><IndiaMore />
+  },
+  {
+    path:"/dashboard/songs/globalTop50",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Songs/Global Top 50</MDBBreadcrumbItem>
+                </MDBBreadcrumb>,
+    main:()=><GlobalMore />
+  },
+  {
+    path:"/dashboard/songs/tags/:state",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Songs/Tags/Tag Songs</MDBBreadcrumbItem>
+                </MDBBreadcrumb>,
+    main:()=><TagSongs />
+
   }
 
 ]
