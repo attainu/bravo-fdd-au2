@@ -9,7 +9,7 @@ class Songs extends React.Component {
     return (
         <div>
         <div className="text-dark mx-auto d-print-block ">
-        <div className="overflow-auto" style={{height:"600px"}}>
+        <div className="overflow-auto" style={{height:"700px"}}>
             <GlobalTop />
             <India />
             <Tags />

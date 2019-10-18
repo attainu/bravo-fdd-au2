@@ -11,7 +11,7 @@ class MoreTags extends React.Component {
         let genere = image_urls().img;
          console.log();
     return (
-        <div className="songs">
+        <div className="songs" style={{height:"600px",overflowY:"scroll"}}>
             <div className="container">
                 <div className="top-contents">
                     <h1 className="tag">Explore by Tags</h1>

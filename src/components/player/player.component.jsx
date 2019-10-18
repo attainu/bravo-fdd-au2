@@ -10,12 +10,12 @@ class Player extends React.Component{
         let id = this.props.videoId;
         let element;
         if(id){
-           element =  <iframe className="videoplayer" src={`https://www.youtube.com/embed/${id}?rel=0`} frameBorder="2" allow="autoplay; encrypted-media" allowFullScreen width="100%" height="380px"></iframe>
+           element =  <iframe className="videoplayer" src={`https://www.youtube.com/embed/${id}?rel=0`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen width="100%" height="550px"></iframe>
         }else{
-           element = <img src="https://lanaamelina.com/wp-content/uploads/2017/08/button_animatio_3.gif" width="100%" height="100%"/>
+           element = <div>loading ....</div>
         }
     return (
-        <div style={{height:"400px",overflowY:"hidden",fontFamily:"'Fira Sans', sans-serif"}} className="z-depth-2 border border-primary rounded mb-0 p-2">
+        <div style={{height:"500px",overflowY:"hidden",fontFamily:"'Fira Sans', sans-serif"}} className="">
             {element}
         </div>
     )

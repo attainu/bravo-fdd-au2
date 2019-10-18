@@ -10,13 +10,13 @@ function SearchResult(props) {
     var len = props.searchresult.length
     return (
 
-        len?(<div style={{height:"400px",overflowY:"scroll",fontFamily:"'Fira Sans', sans-serif"}} className="z-depth-2 border border-primary rounded mb-0 p-2">
+        len?(<div style={{height:"500px",overflowY:"auto",fontFamily:"'Fira Sans', sans-serif",width:"100%"}} className="bg-dark">
             <table class="table table-borderless table-hover">
                 <tbody>
                    { props.searchresult.map((result,i)=><tr className="text-center hoverable">
-                                                        <th scope="row"><strong>{i+1}</strong></th>
+                                                        <th scope="row" className="text-white"><strong>{i+1}</strong></th>
                                                         <td><img src={result.result.header_image_thumbnail_url} width="30px" height="30px" className="mx-auto rounded-circle"/></td>
-                                                        <td><h6 className="mt-3"><strong>{result.result.full_title}</strong></h6></td>
+                                                        <td><h6 className="mt-3 text-white"><strong>{result.result.full_title}</strong></h6></td>
                                                         <td><MDBBtn color="light-blue" className="btn btn-sm mt-3 rounded" onClick={()=>props.getSongLink(result.result.id)}>
                                                         <MDBIcon icon="play" /><span> </span></MDBBtn></td>
                                                         </tr>)
