@@ -19,3 +19,20 @@ body
     overflow-y: scroll;
 } */
 #more {display: none;}
+
+.containers {
+    position: relative;
+  width: 17rem; /* Maximum width */
+    
+  }
+  
+  .containers .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    height: 100%;
+  
+  }

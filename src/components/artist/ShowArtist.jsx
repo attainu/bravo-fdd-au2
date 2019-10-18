@@ -3,25 +3,47 @@ import { connect } from 'react-redux';
 import {ArtistGetInfo,ArtistGetTopTrack} from '../../api'
 import {getInfo} from '../../actions/ArtistAction';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
-import artistInfo from './artistInfo';
-
 
 class ShowArtist extends React.Component {
+   show(index) {
+     console.log(index)
+    var element = document.getElementById(index);
+   if(element){
+    var removeClass = require('remove-class');
+    removeClass(element, 'd-none');
+
+   }else{
+
+   }
+  }
+  hide(index) {
+    console.log(index)
+
+    var element = document.getElementById(index);
+    if(element){
+      var addClass = require('add-class');
+    
+      addClass(element, 'd-none');
+    }
+    else{}
+  }
    render() { 
     return (
     <div>
+        {this.props.ArtistData.map((item,index)=>
 
-        {this.props.ArtistData.map((item)=>
 
+    <div  onMouseOver={this.show.bind(this,index)} onMouseOut={this.hide.bind(this,index)} className="card containers m-3 p-0 d-inline-block" style={{"width":"17rem"}}>
 
-    <div className="card m-3 p-0 d-inline-block" style={{"width":"17rem"}}>
 <Link to="/dashboard/Artist/artistInfo"  onClick={this.props.getInfoArtist.bind(this,item.name,item.images[0].url)} >
+<div  id={index} className="content d-none">
+    <h1 className="ml-1">{item.name}</h1>
+    <p className="ml-2 ">Followers :  {Math.floor(item.followers.total/1000000)}M</p>
+  </div>
     <img src={item.images[0].url}  alt="..." style={{height:"250px",width:"100%"}}/>
     </Link>
       
       <br/>
-  {/* <h5 class="card-title ml-2">  Name:- {item.name}</h5>
-   <p class="card-text ml-2"> Followers:- {Math.floor(item.followers.total/1000000)}M</p> */}
     </div>
 
         )}
