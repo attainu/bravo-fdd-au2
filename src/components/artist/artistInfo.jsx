@@ -124,19 +124,22 @@ function mapStateToProps(state){
             ArtistGetSongs(SongName)
     .then(
       (SongResult) => {
-    console.log(SongResult)
+    // console.log(SongResult)
     if(SongResult.response.hits.length===0){
-// console.log(SongResult.response.hits[0].result)
+// console.log(SongResult)
     }
     else{
     ArtistGetPlayer(SongResult.response.hits[0].result.id)
     .then(
       (PlayerResult) => {
-        console.log("PlayerResult"+PlayerResult)
+        // console.log(PlayerResult.response.song.media)
         if(PlayerResult.response.song.media.length===0){
-
+// console.log("PlayerResult:- "+PlayerResult)
+           
         }
 else{
+// console.log("PlayerResult:- "+PlayerResult.response.song.media)
+
          dispatch(Player(PlayerResult.response.song.media))
 
 }
