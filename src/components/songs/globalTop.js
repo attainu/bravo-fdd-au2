@@ -21,22 +21,22 @@ class GlobalTop extends React.Component {
                         <h1 className="tag">Global Top charts</h1>
                         <Link to="/dashboard/songs/globalTop50"><p className="see-more">See more</p></Link>
                     </div>
-                    {this.props.tracks.track.map((item, i) =>
-                    <div className="cards">
-                        <div className="card card-cascade wider">
-                        <div className="view view-cascade overlay">
-                            <Img  className="card-img-top images" src={this.props.names[i]} alt="Card image cap" />
-                        </div>
+{this.props.tracks.track.map((item, i) =>
+<div className="cards">
+    <div className="card card-cascade wider">
+    <div className="view view-cascade overlay">
+        <Img  className="card-img-top images" src={this.props.names[i]} alt="Card image cap" />
+    </div>
 
-                        <div className="card-body card-body text-center pb-0">
+    <div className="card-body card-body text-center pb-0">
 
-                            <h6 className="card-title song-name">{item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}</h6>
-                            <h6 className="blue-text pb-2 artist-name">{item.artist.name}</h6>
+        <h6 className="card-title song-name">{item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}</h6>
+        <h6 className="blue-text pb-2 artist-name">{item.artist.name}</h6>
 
-                        </div>
-                    </div>
-                    </div>
-                    )}
+    </div>
+</div>
+</div>
+)}
                 </div>) 
                 : (<div>Loading Global top charts....</div>)
             }

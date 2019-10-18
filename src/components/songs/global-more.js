@@ -16,11 +16,14 @@ class GlobalMore extends React.Component {
     render(){
     return (
         <div className="global-more">
+            
                 <div className="container">
+                    
                     <div className="title">
-                        <h2>Global Top50</h2>
+                    <SongPlayer />
                     </div>
-                    <div className="scrollbar scrollbar-lady-lips scroll">
+              
+                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%",height:"380px"}}>
                     <table class="table table-borderless table-hover table1">
                         {this.props.charts ? (<tbody>
                         {this.props.charts.track.map((item, i) => 
@@ -39,7 +42,7 @@ class GlobalMore extends React.Component {
                     </div>
                     
                 </div>
-                <SongPlayer />
+              
             </div>
     )
     }

@@ -12,7 +12,9 @@ class MoreTags extends React.Component {
          console.log();
     return (
         <div className="songs">
-            <div className="container">
+        <h3 className="display-3 text-white mx-auto "> Top Artist </h3>
+
+            <div className="container overflow-auto" style={{height:"600px"}} >
                 <div className="top-contents">
                     <h1 className="tag">Explore by Tags</h1>
                 </div>

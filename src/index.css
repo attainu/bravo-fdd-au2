@@ -16,15 +16,20 @@ body {
 code {
   font-family: "Quicksand";
 }
-/* width */
-::-webkit-scrollbar {
-  width: auto;
+::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: #343a40;
 }
 
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #343a40;
+}
 
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: skyblue; 
-
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color:#343a40;
 }

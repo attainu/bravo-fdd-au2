@@ -17,9 +17,9 @@ body, h2{
     color: black;
     margin:90px 0px 20px 40px;
 }
-.songs:first-child{
+/* .songs:first-child{
     margin: 90px 0px 0px 0px; 
-}
+} */
 .cards{
     display: inline-block;
 
@@ -117,11 +117,11 @@ div.scroll{
     min-width: 40px;
     min-height: 40px;
 }
-.song-player{
+/* .song-player{
     position: relative;
     top: -340px;
     left: 550px;
-}
-.global-more, .tagsSongs{
-    height: 100vh;
+} */
+.global-more{
+    width: 100%;
 }
