@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {getTagTop50Action, getSongLink, getSongs} from '../../actions/songsActions';
 import Img from 'react-image';
-import SongPlayer from './songsPlayer';
+import SongPlayer from '../SongPlayer';
 import './songs.css';
 import {fetchSearchResults} from '../../api';
+import  { Player} from '../../actions/ArtistAction';
+
 
 class TagSongs extends React.Component{
     componentDidMount(){
@@ -14,13 +16,13 @@ class TagSongs extends React.Component{
         console.log("tag songs render",this.props.tagSong, this.props.images);
         let tagName = window.location.href.slice(43, 100);
         return(
-            <div className="tagsSongs">
-                <div className="container">
-                    <div className="title">
-                        <h2>{tagName.charAt(0).toUpperCase()+tagName.slice(1,20)} Top 50</h2>
-                    </div>
-                    <div className="scrollbar scrollbar-lady-lips scroll">
-                    <table class="table table-borderless table-hover table1">
+            <div style={{width:"auto"}}>
+            <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+            <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+            <div style={{width:"auto"}}>
+      <SongPlayer/>
+                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
+                    <table class="table table-borderless table-hover table1 w-100">
                         {this.props.tagSong ? (<tbody>
                         {this.props.tagSong.track.map((item, i) => 
                             <tr className="tr1">
@@ -36,9 +38,9 @@ class TagSongs extends React.Component{
                         </tbody>) : (<div><h2>Loading....</h2>Loading....</div>)}
                     </table>
                     </div>
-                    
+                   </div> 
                 </div>
-                <SongPlayer />
+              
             </div>
         )
     }
@@ -81,7 +83,7 @@ function mapDispatchToProps(dispatch){
                 fetch(url)
                 .then(response => response.json())
                 .then(result => 
-                    dispatch(getSongLink(result.response.song.media))
+                    dispatch(Player(result.response.song.media))
                     )
                 
             })
