@@ -18,14 +18,16 @@ return <h1>Get Artist Name</h1>
      }else{
     return (  
       
-      <div>
-      <h3 className="display-3 text-dark mx-auto "> Artist Info</h3>
-      <div className="text-dark mx-auto d-print-block ">
-      <div>
+      <div style={{width:"auto"}}>
+      <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Artist Info</h3>
+      <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+      <div style={{width:"auto"}}>
 <SongPlayer/>
-      <div class="container overflow-auto text-dark" style={{height:"600px"}}>
-    <div class="fb-profile text-dark ">
-        <img align="left"  style={{height:"280px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
+
+      <div class="container overflow-auto text-dark w-100" style={{height:"600px",width:"auto"}}>
+    <div class="fb-profile text-dark " style={{width:"auto"}}>
+
+        <img align="left"  style={{height:"300px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
         <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="Profile image example"/>
    
         

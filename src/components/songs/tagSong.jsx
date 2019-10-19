@@ -16,16 +16,13 @@ class TagSongs extends React.Component{
         console.log("tag songs render",this.props.tagSong, this.props.images);
         let tagName = window.location.href.slice(43, 100);
         return(
-            <div className="tagsSongs">
-                <div className="container">
-                    
-                    <div className="title">
-                  <SongPlayer />
-
-                        <h2>{tagName.charAt(0).toUpperCase()+tagName.slice(1,20)} Top 50</h2>
-                    </div>
+            <div style={{width:"auto"}}>
+            <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+            <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+            <div style={{width:"auto"}}>
+      <SongPlayer/>
                     <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
-                    <table class="table table-borderless table-hover table1">
+                    <table class="table table-borderless table-hover table1 w-100">
                         {this.props.tagSong ? (<tbody>
                         {this.props.tagSong.track.map((item, i) => 
                             <tr className="tr1">
@@ -41,7 +38,7 @@ class TagSongs extends React.Component{
                         </tbody>) : (<div><h2>Loading....</h2>Loading....</div>)}
                     </table>
                     </div>
-                    
+                   </div> 
                 </div>
               
             </div>

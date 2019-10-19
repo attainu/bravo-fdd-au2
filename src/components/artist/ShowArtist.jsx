@@ -29,12 +29,9 @@ class ShowArtist extends React.Component {
   }
    render() { 
     return (
-    <div>
+    <div className="ml-4" style={{width:"auto"}}>
         {this.props.ArtistData.map((item,index)=>
-
-
-    <div  onMouseOver={this.show.bind(this,index)} onMouseOut={this.hide.bind(this,index)} className="card containers m-3 p-0 d-inline-block" style={{"width":"17rem"}}>
-
+ <div  onMouseOver={this.show.bind(this,index)} onMouseOut={this.hide.bind(this,index)} className="card containers p-0 d-inline-block m-4" style={{"width":"17rem"}}>
 <Link to="/dashboard/Artist/artistInfo"  onClick={this.props.getInfoArtist.bind(this,item.name,item.images[0].url)} >
 <div  id={index} className="content d-none">
     <h1 className="ml-1">{item.name}</h1>

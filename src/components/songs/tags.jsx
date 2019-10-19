@@ -15,7 +15,7 @@ class Tags extends React.Component {
             <div className="container">
                 <div className="top-contents">
                     <h1 className="tag">Explore by Tags</h1>
-                    <Link to="/dashboard/songs/allTags"><p className="see-more">See more</p></Link>
+                    <Link to="/dashboard/songs/allTags"><button className="btn btn-dark text-white ">See more</button></Link>
                 </div>
                 <Link to="/dashboard/songs/tags/electro" params="electro"><div className="card bg-dark text-white tag-card cards">
                     <Img src={genere[0].url} className="card-img tag-img images" alt="..." />

@@ -17,15 +17,13 @@ class IndiaMore extends React.Component {
     
     render(){
     return (
-        <div className="global-more" >
-                <div className="container" >
-                    <div className="title" >
-                    <SongPlayer />
-
-                        <h2>India Top50</h2>
-                    </div>
+        <div style={{width:"auto"}}>
+        <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+        <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+        <div style={{width:"auto"}}>
+  <SongPlayer/>
                     <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
-                    <table class="table table-borderless table-hover table1">
+                    <table class="table table-borderless table-hover table1 w-100">
                         {this.props.charts ? (<tbody>
                         {this.props.charts.track.map((item, i) => 
                             <tr className="tr1">
@@ -39,10 +37,12 @@ class IndiaMore extends React.Component {
                             </tr>
                         )}
                         </tbody>) : (<div>Loading....</div>)}
+
+
                     </table>
                     </div>
                 </div>
-              
+             </div> 
             </div>
     )
     }

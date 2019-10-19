@@ -15,7 +15,7 @@ import ArtistInfo from '../artist/artistInfo'
 import MoreTags from '../songs/more-tags';
 import IndiaMore from '../songs/india50-more';
 import GlobalMore from '../songs/global-more';
-import TagSongs from "../songs/tagSonga";
+import TagSongs from "../songs/tagSong";
 
 const routes = [
  {
@@ -68,7 +68,7 @@ const routes = [
   {
     path:"/dashboard/songs/allTags",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs/Tags</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -77,7 +77,7 @@ const routes = [
   {
     path:"/dashboard/songs/IndiaTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs/India Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -86,7 +86,7 @@ const routes = [
   {
     path:"/dashboard/songs/globalTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs/Global Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -95,7 +95,7 @@ const routes = [
   {
     path:"/dashboard/songs/tags/:state",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs/Tags/Tag Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
