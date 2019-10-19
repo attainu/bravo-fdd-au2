@@ -13,13 +13,9 @@ import {getData} from '../../actions/ArtistAction'
      render() { 
     return (
         <div>
-            <h3 className="display-3 text-dark mx-auto">List of Top Artists</h3>
-            <div className="text-dark mx-auto d-print-block ">
-            <div className="overflow-auto" style={{height:"600px"}}>
+            <h3 className="display-3 text-dark mx-auto "> Top Artists </h3>
+            <div className="overflow-auto text-dark" style={{height:"600px"}}>
                 <ShowArtist/>
-
-    
-    </div>  
             </div>
           
         </div>

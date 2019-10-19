@@ -5,7 +5,9 @@ import  { getTop50Action , getSongs, getSongLink } from '../../actions/songsActi
 import Img from 'react-image';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import {fetchSearchResults} from '../../api';
-import SongPlayer from "./songsPlayer";
+import SongPlayer from "../SongPlayer";
+import  { Player} from '../../actions/ArtistAction';
+
 
 class GlobalMore extends React.Component {
 
@@ -15,34 +17,36 @@ class GlobalMore extends React.Component {
     
     render(){
     return (
-        <div className="global-more">
-                <div className="container">
-                    <div className="title">
-                        <h2>Global Top50</h2>
-                    </div>
-                    <div className="scrollbar scrollbar-lady-lips scroll">
-                    <table class="table table-borderless table-hover table1">
-                        {this.props.charts ? (<tbody>
-                        {this.props.charts.track.map((item, i) => 
-                            <tr className="tr1">
-                            {/* this.props.songs[i].response.hits[0].result.header_image_url */}
-                            <td className="td1" onClick={this.props.getLink.bind(this, item.name)}>
-                                <Img className="global-more-image" src={this.props.songs[i]} />
-                                <h4>
-                                    {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
-                                </h4>
-                            </td>
-                            </tr>
-                        )}
-                        </tbody>) : (<div>Loading....</div>)}
-                    </table>
-                    </div>
-                    
-                </div>
-                <SongPlayer />
-            </div>
-    )
-    }
+        <div style={{width:"auto"}}>
+        <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+        <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+        <div style={{width:"auto"}}>
+  <SongPlayer/>
+</div>
+
+<div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
+<table class="table table-borderless table-hover table1 w-100">
+    {this.props.charts ? (<tbody>
+    {this.props.charts.track.map((item, i) => 
+        <tr className="tr1">
+        {/* this.props.songs[i].response.hits[0].result.header_image_url */}
+        <td className="td1" onClick={this.props.getLink.bind(this, item.name)}>
+            <Img className="global-more-image" src={this.props.songs[i]} />
+            <h4>
+                {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
+            </h4>
+        </td>
+        </tr>
+    )}
+    </tbody>) : (<div>Loading....</div>)}
+</table>
+</div>
+
+</div>
+
+</div>
+)
+}
 }
 function mapStateToProps(state){
     console.log("get top", state);
@@ -80,7 +84,7 @@ function mapDispatchToProps(dispatch){
                 fetch(url)
                 .then(response => response.json())
                 .then(result => 
-                    dispatch(getSongLink(result.response.song.media)))
+                    dispatch(Player(result.response.song.media)))
                 
             })
         }
