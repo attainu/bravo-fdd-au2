@@ -19,7 +19,7 @@ class India extends React.Component {
                 ? (<div className="container">
                     <div className="top-contents">
                         <h1 className="tag">India Top charts</h1>
-                        <Link to="/dashboard/songs/IndiaTop50"><p className="see-more">See more</p></Link>
+                        <Link to="/dashboard/songs/IndiaTop50"><button className="btn btn-dark text-white ">See more</button></Link>
                     </div>
                     {this.props.tracks.track.map((item, i) =>
                     <div className="cards">
