@@ -15,7 +15,7 @@ class Radiofilter extends React.Component {
           <button
             onClick={() => this.props.selected_city(item)}
             key={index.toString()}
-            style={{ borderRadius: 20, padding: '10px 15px'}}
+            style={{ borderRadius: 20, padding: '15px 20px'}}
             class="btn  btn-xs btn-warning">
             {item}
           </button>

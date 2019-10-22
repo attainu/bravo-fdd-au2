@@ -18,7 +18,7 @@ class Radiolist extends React.Component {
       this.props.radio
         .filter(item => item.City.includes(this.props.city))
         .map((item, i) => (
-          <div class="col-md-3 p-3 col-sm-3" key={i.toString()}>
+          <div class="col-md-4 col-sm-6 p-3" key={i.toString()}>
             <div class="card bg-primary">
               <img
                 height="140"
@@ -31,15 +31,14 @@ class Radiolist extends React.Component {
                 <h5 class="card-title  d-flex justify-content-center">
                   {item.Station_name}
                 </h5>
-                <p class="card-text ml-1">
+                 <p class="card-text ml-1">
                   {item.Language}
                   <spam className="mr-2" style={{ float: "right" }}>
                     {item.type}
                   </spam>
-                </p>
-                <div class="mp3-audio mr-3">
+                </p> 
+                <div className="mr-3" >
                   <button
-                    type="button"
                     className="btn btn-info btn-block"
                     onClick={() => this.props.station(item)}
                   >
@@ -54,11 +53,11 @@ class Radiolist extends React.Component {
       <h3>Please wait while Connecting to station....</h3>
     );
     return (
-      <div className="container">
+      
         <div className="radiolist">
           <div className="row">{showlist}</div>
         </div>
-      </div>
+      
     );
   }
 }
