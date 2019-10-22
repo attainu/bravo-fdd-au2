@@ -46,6 +46,15 @@ export function ArtistGetPlayer(SongId){
 
 
 
+//fetching the radio stations
+export function fetch_radio_api(){
+      //let url = './api.js'
+       let url ='https://raw.githubusercontent.com/naveen-bandela-au2/radio/master/radio.json'
+       return fetch(url)
+              .then(function(data){
+                  return data.json();
+              })
+   }
 
 
 
