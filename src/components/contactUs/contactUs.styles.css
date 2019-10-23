@@ -7,4 +7,9 @@
   body{
     background-color: white;
   }
+  .card-list{
+    width:22rem;
+    min-height: 18rem;
+    
+  }
   

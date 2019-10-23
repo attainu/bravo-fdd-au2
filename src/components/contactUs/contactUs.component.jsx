@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBContainer, MDBMask, MDBView,MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBContainer, MDBMask, MDBView, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../logo.svg';
 import "../contactUs/contactUs.styles.css";
@@ -53,59 +53,44 @@ class ContactUsPage extends React.Component {
         {/* cards for team members*/}
         <main>
           <div className="card-deck">
-            <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable">
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Suraj</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-          </MDBCardText>
-                <MDBBtn className="rounded-pill" color="light-blue" href="#">See Profile</MDBBtn>
+
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/surajk76/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Lakshmikanth</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-          </MDBCardText>
-                <MDBBtn className="rounded-pill" color="light-blue" href="#">See Profile</MDBBtn>
+
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/lakshmikanth-reddy-930b9898/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Harika</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-          </MDBCardText>
-                <MDBBtn className="rounded-pill" color="light-blue" href="#">See Profile</MDBBtn>
+
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/harika-thipparthi-a97b51186/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Naveen</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-          </MDBCardText>
-                <MDBBtn className="rounded-pill" color="light-blue" href="#">See Profile</MDBBtn>
+
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/naveen-bandela-367176b6/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="ml-3 mt-3 p-2 mr-3 hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Yash</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-          </MDBCardText>
-                <MDBBtn className="rounded-pill" color="light-blue" href="#">See Profile</MDBBtn>
+
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/yash-pal-91181b185/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
           </div>
@@ -135,7 +120,7 @@ class ContactUsPage extends React.Component {
                   error="wrong"
                   success="right"
                 />
-    
+
                 <MDBInput
                   label="Message"
                   icon="pencil"
