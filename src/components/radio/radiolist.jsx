@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Radiocard from "./radiocardcomponent";
 import { fetch_radio_api } from "../../api";
 import {
   fetchstations,
@@ -18,46 +19,22 @@ class Radiolist extends React.Component {
       this.props.radio
         .filter(item => item.City.includes(this.props.city))
         .map((item, i) => (
-          <div class="col-md-4 col-sm-6 p-3" key={i.toString()}>
-            <div class="card bg-primary">
-              <img
-                height="140px"
-                width="140px"
-                class="card-img-top mp3-cover"
-                src={item.st_img}
-                alt={item.Station_name}
-              />
-              <div class="card-block" >
-                <h5 class="card-title  d-flex justify-content-center">
-                  {item.Station_name}
-                </h5>
-                 <p class="card-text ml-1">
-                  {item.Language}
-                    <spam className="mr-2" style={{ float: "right" }}>
-                    {item.type}
-                  </spam> 
-                </p>  
-                <div className="mr-3" >
-                  <button
-                    className="btn btn-info btn-block"
-                    onClick={() => this.props.station(item)}
-                  >
-                    Play
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Radiocard
+            key={i.toString()}
+            src={item.st_img}
+            st_name={item.Station_name}
+            language={item.Language}
+            type={item.type}
+            clickhandler={() => this.props.station(item)}
+          />
         ))
     ) : (
       <h3>Please wait while Connecting to station....</h3>
     );
     return (
-      
-        <div className="radiolist">
-          <div className="row">{showlist}</div>
-        </div>
-      
+      <div className="radiolist">
+        <div className="row">{showlist}</div>
+      </div>
     );
   }
 }
