@@ -4,6 +4,7 @@ import {ArtistGetInfo,ArtistGetTopTrack} from '../../api'
 import {getInfo} from '../../actions/ArtistAction';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 
+
 class ShowArtist extends React.Component {
    show(index) {
      console.log(index)

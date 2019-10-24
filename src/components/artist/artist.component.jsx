@@ -6,11 +6,12 @@ import {getData} from '../../actions/ArtistAction'
 
 
     class Artist extends React.Component {
-    // console.log(props.result)
     componentDidMount(){
         this.props.ShowArtist();
       }
      render() { 
+    console.log("Artist Page")
+
     return (
         <div>
             <h3 className="display-3 text-dark mx-auto "> Top Artists </h3>
@@ -24,11 +25,11 @@ import {getData} from '../../actions/ArtistAction'
 function mapActionToProps(dispatch) {
     return {
       ShowArtist: function() {
-        // console.log("call")
+        console.log("call")
           ArtistData()
   .then(
     (result) => {
-  // console.log(result)
+  console.log(result)
   // result.artists.artist.map((item)=>console.log(item.name))
       dispatch(getData(result.artists))
 
