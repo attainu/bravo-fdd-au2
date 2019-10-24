@@ -7,10 +7,10 @@ import "./radio.css";
 function Radio() {
     return (
         <div>
-           <h5 className="display-3 text-white mx-auto">.</h5>
-           <RadioPlayer/>
-           <Radiofilter/>
-           <Radiolist/>
+            <h5 className="display-3 text-white mx-auto">.</h5>
+            <RadioPlayer />
+            <Radiofilter />
+            <Radiolist />
         </div>
     )
 }

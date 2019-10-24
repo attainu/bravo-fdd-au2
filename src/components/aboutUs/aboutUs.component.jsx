@@ -105,7 +105,7 @@ class AboutUsPage extends Component {
           <div className="row">
             <div className="col"></div>
             <div className="col" style={{ marginTop: "8rem" }}>
-              <h3 className="text-center"> <b>hiii</b></h3>
+              <h3 className="text-center"> <b>AttainU-Attain Your Dream</b></h3><br></br>
               <p>We are the students of AttainU.As we all know there is no quality in our education system....there are many engineers passing out from colleges with no subject and practical knowledge</p>
               <p>AttainU is the best place where a student can get command on the topics what he/she learns...this is because of the teaching here and the staff at AttainU are very educated and they will consider each student and train us individually</p>
             </div>
