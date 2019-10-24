@@ -2,12 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux';
 import ShowArtist from './ShowArtist'
 import {ArtistData,fetchSearchResults} from '../../api'
-import {getData} from '../../actions/ArtistAction'
+import {getData,HideData} from '../../actions/ArtistAction'
 
 
     class Artist extends React.Component {
     componentDidMount(){
         this.props.ShowArtist();
+      }
+      componentWillUnmount(){
+        this.props.HideArtist();
       }
      render() { 
     console.log("Artist Page")
@@ -45,7 +48,16 @@ function mapActionToProps(dispatch) {
 
 
       })
-  }}}
+  },
+  HideArtist: function() {
+
+    dispatch(HideData())
+
+}
+
+
+
+}}
 
   
   export default connect(null,mapActionToProps)(Artist);

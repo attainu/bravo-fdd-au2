@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import {ArtistGetInfo,ArtistGetTopTrack} from '../../api'
 import {getInfo} from '../../actions/ArtistAction';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 class ShowArtist extends React.Component {
@@ -29,9 +31,9 @@ class ShowArtist extends React.Component {
     else{}
   }
    render() { 
-    console.log(this.props.ArtistData)
-
-    return (
+    console.log(this.props.ArtistData.length)
+if(this.props.ArtistData.length===50){
+  return (
     <div className="ml-4" style={{width:"auto"}}>
         {this.props.ArtistData.map((item,index)=>
  <div  onMouseOver={this.show.bind(this,index)} onMouseOut={this.hide.bind(this,index)} className="card containers p-0 d-inline-block m-4" style={{"width":"17rem"}}>
@@ -51,7 +53,24 @@ class ShowArtist extends React.Component {
          
         </div>
        
-    )}
+    )
+}
+else{
+  console.log(this.props.ArtistData)
+  return(
+    <div className="ml-4" style={{width:"auto"}}>
+{/* <i class="fas fa-sync fa-spin"></i> */}
+<div style={{margin:"200px",marginLeft:"400px"}}>
+<FontAwesomeIcon icon={faSpinner} spin size="lg" />
+
+  Loading...
+</div>
+      </div>  
+  )
+
+   }
+
+        }
 }
 
 function mapStateToProps(state){

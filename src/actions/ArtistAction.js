@@ -6,6 +6,13 @@ ArtistImage:image
     }
         
 }
+
+export function HideData(){
+    return{
+    type:"HideAction"
+    }
+        
+}
 export function getInfo(ArtistInfo,ArtistImage,ArtistTopTracks){
 // console.log(result)
     return{

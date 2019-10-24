@@ -13,6 +13,12 @@ return {
     ...state,
     ArtistData: list
         }
+        case "HideAction":
+    
+    return {
+        ...state,
+        ArtistData: []
+            }        
 
  case "getinfoAction":
 
