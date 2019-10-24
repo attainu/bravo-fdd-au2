@@ -1,0 +1,33 @@
+.tag-card{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 150px;
+    border-radius: 0%;
+
+    .tag-img{
+        opacity: 0.5;
+        min-width: 250px;
+        max-width: 250px;
+        min-height: 150px;
+        max-height: 150px;
+    }
+
+    .tags-title{
+        display: none;
+        justify-content: center;
+        align-content: center;
+        font-style: bold;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
+    }
+    
+    &:hover{
+        .tags-title{
+            display: flex;
+        }
+    }
+}

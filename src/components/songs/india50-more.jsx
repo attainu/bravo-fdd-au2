@@ -8,6 +8,7 @@ import Img from 'react-image';
 import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import {fetchSearchResults} from '../../api';
 import SongPlayer from "../SongPlayer";
+import {MDBIcon} from 'mdbreact';
 
 class IndiaMore extends React.Component {
 
@@ -18,23 +19,25 @@ class IndiaMore extends React.Component {
     render(){
     return (
         <div style={{width:"auto"}}>
-        <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+        <h3 className="display-3 text-white mx-auto " style={{width:"auto"}}> Songs </h3>
         <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
-        <div style={{width:"auto"}}>
-  <SongPlayer/>
-                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
-                    <table class="table table-borderless table-hover table1 w-100">
+        <div style={{width:"auto",height:"70vh"}} className="container">
+                <SongPlayer/>
+                    <div className="scrollbar scrollbar-lady-lips scroll border border-dark mb-3" style={{width:"100%",height:"100%"}}>
+                    <table class="table table-border table-hover table1 w-100">
                         {this.props.charts ? (<tbody>
                         {this.props.charts.track.map((item, i) => 
-                            <tr className="tr1">
+                            <tr className="tr1 hoverable">
                             {/* this.props.songs[i].response.hits[0].result.header_image_url */}
                             <td className="td1" onClick={this.props.getLink.bind(this, item.name)}>
-                                <Img className="global-more-image" src={this.props.songs[i]} />
-                                <h4>
-                                    {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
-                                </h4>
+                                    <MDBIcon icon="play-circle" className="mr-2" />
+                                    <Img className="global-more-image" src={this.props.songs[i]} />
+                                    <h5>
+                                        {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
+                                    </h5>
                             </td>
                             </tr>
+                            
                         )}
                         </tbody>) : (<div>Loading....</div>)}
 

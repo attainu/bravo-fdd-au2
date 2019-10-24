@@ -1,7 +1,7 @@
 .sidebar li{
-  padding: 5%;
+  padding: 3vh;
   list-style: none;
-  font-size:18px;
+  font-size:20px;
   letter-spacing: 1.5px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition-delay: 5ms;

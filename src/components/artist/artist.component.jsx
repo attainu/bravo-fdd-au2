@@ -14,7 +14,7 @@ import {getData} from '../../actions/ArtistAction'
     return (
         <div>
             <h3 className="display-3 text-white mx-auto "> Top Artists </h3>
-            <div className="overflow-auto text-dark" style={{height:"600px"}}>
+            <div className="overflow-auto text-dark" style={{height:"80vh"}}>
                 <ShowArtist/>
             </div>
           

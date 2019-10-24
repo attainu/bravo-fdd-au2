@@ -25,7 +25,7 @@ function SearchBox(props) {
                 <div className="col-10 mx-auto">
                   <form role="search">
                       <div className="input-group">
-                        <input className="form-control text-center" placeholder="Search songs or playlists..." name="srch-term" id="ed-srch-term" type="text"/>
+                        <input className="form-control text-center" placeholder="Search songs or playlists..." name="srch-term" id="ed-srch-term" type="text" autoComplete="off"/>
                       <div className="input-group-btn">
                           <button type="submit" id="searchbtn"  onClick={props.doSearch}>
                               Search

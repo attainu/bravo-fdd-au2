@@ -1,40 +1,31 @@
 import React from "react";
-import "./radio.css";
-import { MDBBtn } from 'mdbreact'
+import "./radiocard.styles.scss";
+import Img from 'react-image';
+import { MDBIcon } from 'mdbreact'
 
 function Radiocard(props) {
   return (
-    <div class="col-md-4 col-sm-6 p-3" key={props.key}>
-      <div class="card bg-dark" style={{minHeight:"280px"}}>
-        <img
-          height="140px"
-          width="140px"
-          class="card-img-top mp3-cover"
+      <div class="card bg-dark hoverable" key={props.key}>
+        <Img
+          height="100%"
+          class="card-img"
           src={props.src}
           alt={props.st_name}
         />
-        <div class="card-block">
+        <div class="card-img-overlay bg-dark">
           <h5 class="card-title  d-flex justify-content-center">
             {props.st_name}
           </h5>
-          <p class="card-text ml-1">
-            {props.language}
-            <spam className="mr-2" style={{ float: "right" }}>
-              {props.type}
-            </spam>
-          </p>
-          <div className="mr-3">
-            <MDBBtn
-              color="primary"
-              className="btn-primary btn-block rounded-pill"
+          <div className="mr-3 play">
+            <button
+              className="btn btn-primary rounded-pill"
               onClick={props.clickhandler}
             >
-              Play
-            </MDBBtn>
+              <MDBIcon icon="play" />
+            </button>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 export default Radiocard;

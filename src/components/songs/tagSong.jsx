@@ -6,6 +6,7 @@ import SongPlayer from '../SongPlayer';
 import './songs.css';
 import {fetchSearchResults} from '../../api';
 import  { Player} from '../../actions/ArtistAction';
+import { MDBIcon } from 'mdbreact';
 
 
 class TagSongs extends React.Component{
@@ -17,21 +18,22 @@ class TagSongs extends React.Component{
         let tagName = window.location.href.slice(43, 100);
         return(
             <div style={{width:"auto"}}>
-            <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
+            <h3 className="display-3 text-white mx-auto " style={{width:"auto"}}> Songs </h3>
             <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
-            <div style={{width:"auto"}}>
-      <SongPlayer/>
-                    <div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
-                    <table class="table table-borderless table-hover table1 w-100">
+            <div style={{width:"auto",height:"70vh"}} className="container">
+                    <SongPlayer/>
+                    <div className="scrollbar scrollbar-lady-lips scroll border border-dark" style={{width:"100%",height:"100%"}}>
+                    <table class="table table-border table-hover table1 w-100">
                         {this.props.tagSong ? (<tbody>
                         {this.props.tagSong.track.map((item, i) => 
-                            <tr className="tr1">
+                            <tr className="tr1 hoverable">
                             {/* this.props.songs[i].response.hits[0].result.header_image_url */}
                             <td className="td1" onClick={this.props.getLink.bind(this, item.name)}>
+                                <MDBIcon icon="play-circle" className="mr-2" />
                                 <Img className="global-more-image" src={this.props.images[i]} />
-                                <h4>
+                                <h5>
                                     {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
-                                </h4>
+                                </h5>
                             </td>
                             </tr>
                         )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import './songs.css';
+import './more-tags.styles.scss';
 import Img from 'react-image';
 import image_urls from '../../tags-images/images';
 import {Link} from 'react-router-dom';
@@ -12,9 +12,9 @@ class MoreTags extends React.Component {
          console.log();
     return (
         <div className="songs">
-        <h3 className="display-3 text-dark mx-auto "> Tags </h3>
+        <h3 className="display-3 text-white mx-auto "> Tags </h3>
 
-            <div className="container overflow-auto" style={{height:"600px"}} >
+            <div className="container-fluid overflow-auto" style={{height:"80vh"}} >
            
                 {genere.map((item) => 
                     <Link to={`/dashboard/songs/tags/${item.tag}`}>

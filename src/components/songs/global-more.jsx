@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
 import {fetchSearchResults} from '../../api';
 import SongPlayer from "../SongPlayer";
 import  { Player} from '../../actions/ArtistAction';
+import {MDBIcon} from 'mdbreact'
 
 
 class GlobalMore extends React.Component {
@@ -18,23 +19,24 @@ class GlobalMore extends React.Component {
     render(){
     return (
         <div style={{width:"auto"}}>
-        <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Songs </h3>
-        <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
+        <h3 className="display-3 text-white mx-auto " style={{width:"auto"}}> Songs </h3>
+        <div className="text-dark mx-auto d-print-block container" style={{width:"auto",height:"70vh"}} >
         <div style={{width:"auto"}}>
-  <SongPlayer/>
-</div>
+            <SongPlayer/>
+        </div>
 
-<div className="scrollbar scrollbar-lady-lips scroll" style={{width:"100%"}}>
-<table class="table table-borderless table-hover table1 w-100">
+<div className="scrollbar scrollbar-lady-lips scroll border border-dark" style={{width:"100%",height:"100%"}}>
+<table class="table table-border table-hover table1 w-100">
     {this.props.charts ? (<tbody>
     {this.props.charts.track.map((item, i) => 
-        <tr className="tr1">
+        <tr className="tr1 hoverable">
         {/* this.props.songs[i].response.hits[0].result.header_image_url */}
         <td className="td1" onClick={this.props.getLink.bind(this, item.name)}>
+        <MDBIcon icon="play-circle" className="mr-2" />
             <Img className="global-more-image" src={this.props.songs[i]} />
-            <h4>
+            <h5>
                 {item.name.charAt(0).toUpperCase()+item.name.slice(1,20)}
-            </h4>
+            </h5>
         </td>
         </tr>
     )}

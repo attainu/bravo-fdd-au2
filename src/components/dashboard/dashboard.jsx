@@ -23,15 +23,16 @@ const routes = [
     path:"/dashboard/artist",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark text-center" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Artist</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Artist/>
   },
   {
     path:"/dashboard/songs",
+    exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Songs/>
@@ -39,7 +40,7 @@ const routes = [
   {
     path:"/dashboard/search",
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Search</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Search/>
@@ -88,7 +89,7 @@ const routes = [
     path:"/dashboard/songs/globalTop50",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="ml-3">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Global Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -98,8 +99,10 @@ const routes = [
     path:"/dashboard/songs/tags/:state",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Tags/Tag Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Tags</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Tag Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><TagSongs />
   }
