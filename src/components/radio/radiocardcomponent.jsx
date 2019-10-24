@@ -1,10 +1,11 @@
 import React from "react";
 import "./radio.css";
+import { MDBBtn } from 'mdbreact'
 
 function Radiocard(props) {
   return (
     <div class="col-md-4 col-sm-6 p-3" key={props.key}>
-      <div class="card bg-primary">
+      <div class="card bg-dark" style={{minHeight:"280px"}}>
         <img
           height="140px"
           width="140px"
@@ -23,12 +24,13 @@ function Radiocard(props) {
             </spam>
           </p>
           <div className="mr-3">
-            <button
-              className="btn btn-info btn-block"
+            <MDBBtn
+              color="primary"
+              className="btn-primary btn-block rounded-pill"
               onClick={props.clickhandler}
             >
               Play
-            </button>
+            </MDBBtn>
           </div>
         </div>
       </div>

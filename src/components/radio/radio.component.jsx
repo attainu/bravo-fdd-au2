@@ -9,8 +9,10 @@ function Radio() {
         <div>
            <h5 className="display-3 text-white mx-auto">.</h5>
            <RadioPlayer/>
+           <div style={{height:"600px",overflowY:"scroll"}}>
            <Radiofilter/>
            <Radiolist/>
+           </div>
         </div>
     )
 }

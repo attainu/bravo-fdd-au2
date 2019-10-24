@@ -13,7 +13,7 @@ class App extends React.Component{
       <Router>
         <Switch>
         <Route exact path="/" component={landingpage} />
-        <Route path="/dashboard" component = {Dashboard}/>
+        <Route path="/dashboard/" component = {Dashboard}/>
         </Switch>
       </Router>
     </div>

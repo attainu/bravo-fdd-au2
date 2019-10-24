@@ -10,8 +10,8 @@ export function fetchSonglink(id){
            .then(data => data.json());
 }
 
-export function ArtistData(query){
-  let url = `https://raw.githubusercontent.com/attainu/bravo-fdd-au2/yashpal/data/artist.json?token=AI7UY746XVYGK7DPAF2RRJC5WBR7W`
+export function ArtistData(){
+  let url = `https://api.myjson.com/bins/vqzmk`
   return fetch(url)
          .then(data => data.json());
 }

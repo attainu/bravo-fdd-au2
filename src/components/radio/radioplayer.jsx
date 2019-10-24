@@ -55,7 +55,7 @@ class RadioPlayer extends React.Component {
               <img
                 onClick={this.toggler_handler}
                 height="50"
-                src="https://www.iconsdb.com/icons/preview/white/pause-xxl.png"
+                src="https://i.ibb.co/D7Vr10d/pause-xxl.png"
                 alt="pause"
               />
               <div className="playercontent">

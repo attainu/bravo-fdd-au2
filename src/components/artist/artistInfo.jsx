@@ -14,26 +14,22 @@ import SongPlayer from '../SongPlayer'
 class ArtistInfo extends React.Component {
    render() { 
      if(this.props.ArtistInfo==null){
-return <h1>Get Artist Name</h1>
+        return <h1>Get Artist Name</h1>
      }else{
     return (  
       
-      <div style={{width:"auto"}}>
-      <h3 className="display-3 text-dark mx-auto " style={{width:"auto"}}> Artist Info</h3>
+      <div className="container mb-3">
+      <h3 className="display-3 text-white mx-auto " style={{width:"auto"}}> Artist Info</h3>
       <div className="text-dark mx-auto d-print-block " style={{width:"auto"}} >
       <div style={{width:"auto"}}>
-<SongPlayer/>
+              <SongPlayer/>
 
-      <div class="container overflow-auto text-dark w-100" style={{height:"600px",width:"auto"}}>
-    <div class="fb-profile text-dark " style={{width:"auto"}}>
-
-        <img align="left"  style={{height:"300px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
-        <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="Profile image example"/>
-   
-        
-    </div>
-    <h1 >{this.props.ArtistInfo.name}</h1>
-    <ReadMoreAndLess
+      <div class="container overflow-auto text-dark w-100 border border-dark" style={{height:"600px",width:"auto"}}>
+        <div class="fb-profile text-dark " style={{width:"auto"}}>
+          <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="Profile image example"/>
+        </div>
+    <h1 className="display-4">{this.props.ArtistInfo.name.toUpperCase()}</h1>
+            <ReadMoreAndLess
                 ref={this.ReadMore}
                 className="read-more-content"
                 charLimit={300}
@@ -44,12 +40,12 @@ return <h1>Get Artist Name</h1>
             </ReadMoreAndLess>
 
 
-   <br/>         
-<div><h3>Published_Date :- </h3>{this.props.ArtistInfo.bio.published} </div>
+        
+{/* <div><h3>Published_Date :- </h3>{this.props.ArtistInfo.bio.published} </div> */}
 <br/>         
-
-<div> <h3>Summary :- </h3>
-<ReadMoreAndLess
+<br/>
+<div> <h3 className="lead">Summary</h3>
+            <ReadMoreAndLess
                 ref={this.ReadMore}
                 className="read-more-content"
                 charLimit={300}
@@ -61,13 +57,13 @@ return <h1>Get Artist Name</h1>
 
  </div>
  <br/>
-<div><h3>Similar Artist :-  </h3></div>
+<div><h3>Similar Artist</h3></div>
 {this.props.ArtistInfo.similar.artist.map((item)=>
 <div class="list-group">
- <a class="list-group-item list-group-item-action"onClick={this.props.getSongs.bind(this,item.name)} >
- <MDBIcon icon="play-circle" className="mr-2" />
- 
- {item.name}</a> 
+    <a class="list-group-item list-group-item-action hoverable" onClick={this.props.getSongs.bind(this,item.name)} >
+    <MDBIcon icon="play-circle" className="mr-2" />
+    
+    {item.name}</a> 
  </div>
 
 )}
@@ -80,14 +76,14 @@ return <h1>Get Artist Name</h1>
   <div>{item.name}</div>
   )} */}
   <br/>
-<div><h3>Top Tracks : - </h3></div>
-<div class="list-group">
-{this.props.ArtistTopTracks.map((item)=>
-  <a href="#" onClick={this.props.getSongs.bind(this,item.name)} class="list-group-item list-group-item-action">
-<MDBIcon icon="play-circle" className="mr-2" /> {item.name}
-  </a>
-   )}
-</div>
+  <div><h3>Top Tracks</h3></div>
+    <div class="list-group">
+    {this.props.ArtistTopTracks.map((item)=>
+      <a href="#" onClick={this.props.getSongs.bind(this,item.name)} class="list-group-item list-group-item-action hoverable">
+        <MDBIcon icon="play-circle" className="mr-2" /> {item.name}
+      </a>
+      )}
+    </div>
 
 
  

@@ -30,7 +30,6 @@ const routes = [
   },
   {
     path:"/dashboard/songs",
-    exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
@@ -49,7 +48,7 @@ const routes = [
     path:"/dashboard/radio",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Radio</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Radio/>
@@ -70,7 +69,8 @@ const routes = [
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Tags</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Tags</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><MoreTags />
   },
@@ -79,7 +79,8 @@ const routes = [
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/India Top 50</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">India Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><IndiaMore />
   },
@@ -88,7 +89,8 @@ const routes = [
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Global Top 50</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Global Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><GlobalMore />
   },
@@ -118,7 +120,7 @@ class Dashboard extends React.Component {
       <div>     
         <MDBRow style={{width:"100vw"}}>
         <MDBCol className="text-white bg-dark shadow-lg">
-          <Logo style={{width:"10rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
+          <Logo  className="logo"/>
           <h1  className="text-center"
                 style={{
                   fontFamily: "Quicksand, sans-serif",

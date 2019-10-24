@@ -46,7 +46,7 @@ class LandingPage extends React.Component{
     let loggedIn = this.props.user;
     console.log("landing page render",loggedIn);
     if(loggedIn){
-      return <Redirect exact to="/dashboard" />
+      return <Redirect exact to="/dashboard/songs" />
     }
   return (
     

@@ -11,7 +11,7 @@ body
 
 .fb-image-profile
 {
-    margin: -90px 10px 0px 50px;
+    margin: 10px 10px 0px 0px;
     z-index: 9;
     width: 20%; 
 }
