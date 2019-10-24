@@ -118,13 +118,7 @@ class Dashboard extends React.Component {
       <div>     
         <MDBRow style={{width:"100vw"}}>
         <MDBCol className="text-white bg-dark shadow-lg">
-<<<<<<< HEAD
-          <Logo 
-          style={{width:"12rem",height:"12rem",marginLeft:"6.5rem",marginTop:"1rem"}}
-          />
-=======
           <Logo style={{width:"10rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
->>>>>>> 636d5d7fa3f70d83d7b58f371786e59bdb3df594
           <h1  className="text-center"
                 style={{
                   fontFamily: "Quicksand, sans-serif",
