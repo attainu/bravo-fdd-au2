@@ -4,6 +4,9 @@ import "./App.css";
 import { BrowserRouter as Router , Route, Switch } from "react-router-dom";
 import landingpage from "./components/landingpage/landingpage";
 import Dashboard from "./components/dashboard/dashboard";
+import ContactUsPage from "./components/contactUs/contactUs.component";
+import AboutUsPage from "./components/aboutUs/aboutUs.component";
+
 
 class App extends React.Component{
   
@@ -14,6 +17,10 @@ class App extends React.Component{
         <Switch>
         <Route exact path="/" component={landingpage} />
         <Route path="/dashboard" component = {Dashboard}/>
+        <Route path="/contactUs" component = {ContactUsPage}/>
+        <Route path="/aboutUs" component = {AboutUsPage}/>
+
+
         </Switch>
       </Router>
     </div>

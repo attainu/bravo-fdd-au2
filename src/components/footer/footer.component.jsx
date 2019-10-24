@@ -7,6 +7,8 @@ import {
   MDBBtn,
   MDBIcon
 } from "mdbreact";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 const FooterPagePro = () => {
   return (
@@ -49,10 +51,10 @@ const FooterPagePro = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">About Us</a>
+              <Link to="/aboutUs" target="blank">About Us</Link>
               </li>
               <li>
-                <a href="#!">Contact Us</a>
+                <Link to="/contactUs" target="blank">Contact Us</Link>
               </li>
             </ul>
           </MDBCol>

@@ -42,3 +42,11 @@ export function fetchSearchResults(query){
               });
       }
    
+//fetching the radio stations
+export function fetch_radio_api() {
+       let url = 'https://raw.githubusercontent.com/harika-thipparthi-au2/fm/master/radiostations.json'
+       return fetch(url)
+              .then(function (data) {
+                     return data.json();
+              })
+}
