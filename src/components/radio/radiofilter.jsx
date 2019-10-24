@@ -8,15 +8,15 @@ class Radiofilter extends React.Component {
   render() {
     let filtermenu = this.props.fetched
       ? this.props.radio
-          .map(item => item.City)
-          .filter((value, index, self) => self.indexOf(value) === index)
-          .map((item, index) => (
-            <Filterbtn
-              key={index.toString()}
-              btnname={item}
-              clickhandler={() => this.props.selected_city(item)}
-            />
-          ))
+        .map(item => item.City)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .map((item, index) => (
+          <Filterbtn
+            key={index.toString()}
+            btnname={item}
+            clickhandler={() => this.props.selected_city(item)}
+          />
+        ))
       : "loading..........";
     let all = this.props.fetched ? (
       <Filterbtn
@@ -24,8 +24,8 @@ class Radiofilter extends React.Component {
         clickhandler={() => this.props.selected_city("")}
       />
     ) : (
-      ""
-    );
+        ""
+      );
     return (
       <div className="container">
         <div className="row   d-flex justify-content-center">

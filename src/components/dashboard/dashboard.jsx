@@ -12,6 +12,7 @@ import Songs from "../songs/songs.component";
 import Search from "../search/search.component";
 import Radio from "../radio/radio.component";
 import ArtistInfo from '../artist/artistInfo'
+import Profile from "../profile/profile.component";
 import MoreTags from '../songs/more-tags';
 import IndiaMore from '../songs/india50-more';
 import GlobalMore from '../songs/global-more';
@@ -66,6 +67,17 @@ const routes = [
     main:()=><ArtistInfo/>
   },
   {
+
+    path:"/dashboard/profile",
+    exact:true,
+    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
+                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Profile</MDBBreadcrumbItem>
+
+                </MDBBreadcrumb>,
+    main:()=><Profile/>
+  },
+  {
     path:"/dashboard/songs/allTags",
     exact:true,
     sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
@@ -100,6 +112,7 @@ const routes = [
                   <MDBBreadcrumbItem active className="text-white">Songs/Tags/Tag Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><TagSongs />
+
   }
 
 ]

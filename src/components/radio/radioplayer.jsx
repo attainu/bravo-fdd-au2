@@ -5,7 +5,7 @@ import "./radio.css";
 import pausevisual from "./pausevisual.jpg";
 
 class RadioPlayer extends React.Component {
-  
+
   componentDidMount() {
     this.refs.fm.load();
   }
@@ -64,38 +64,38 @@ class RadioPlayer extends React.Component {
                     this.props.fm.fm.Frequency === "NA"
                       ? ""
                       : this.props.fm.fm.Frequency
-                  } ${this.props.fm.fm.Station_name}`}</h1>
+                    } ${this.props.fm.fm.Station_name}`}</h1>
                 </marquee>
               </div>
             </div>
           </div>
         </React.Fragment>
       ) : (
-        <React.Fragment>
-          <div className="row">
-            <img width="99%" height="150" className="pause" alt='visualpause' src={pausevisual} />
-          </div>
-          <div>
-            {fm}
-            <div className="playercompenents">
-              <img
-                onClick={this.toggler_handler}
-                height="50"
-                alt="play"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgWzzkCzbtm6aLcOaytRri6O5BzS_QBAgjMT9HTRPDTeCvPZZuSg"
-              />
-              <div className="playercontent">
-                <marquee>
-                  <h1>{this.props.fm.fm.Station_name}</h1>
-                </marquee>
+          <React.Fragment>
+            <div className="row">
+              <img width="99%" height="150" className="pause" alt='visualpause' src={pausevisual} />
+            </div>
+            <div>
+              {fm}
+              <div className="playercompenents">
+                <img
+                  onClick={this.toggler_handler}
+                  height="50"
+                  alt="play"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgWzzkCzbtm6aLcOaytRri6O5BzS_QBAgjMT9HTRPDTeCvPZZuSg"
+                />
+                <div className="playercontent">
+                  <marquee>
+                    <h1>{this.props.fm.fm.Station_name}</h1>
+                  </marquee>
+                </div>
               </div>
             </div>
-          </div>
-        </React.Fragment>
-      )
+          </React.Fragment>
+        )
     ) : (
-      <div>{fm}</div>
-    );
+        <div>{fm}</div>
+      );
     return <div>{visualizer}</div>;
   }
 }
