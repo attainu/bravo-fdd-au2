@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import ShowArtist from './ShowArtist'
-import {ArtistData} from '../../api'
+import {ArtistData,fetchSearchResults} from '../../api'
 import {getData} from '../../actions/ArtistAction'
 
 
@@ -29,9 +29,19 @@ function mapActionToProps(dispatch) {
           ArtistData()
   .then(
     (result) => {
-  console.log(result)
-  // result.artists.artist.map((item)=>console.log(item.name))
-      dispatch(getData(result.artists))
+  // console.log(result.artists.artist)
+  result.artists.artist.map((item)=>
+  fetchSearchResults(item.name)
+  .then(
+    (result) => 
+    // console.log(result.response.hits[0])
+    dispatch(getData(result.response.hits[0].result.primary_artist.image_url,
+        
+      result.response.hits[0].result.primary_artist.name))
+    )
+
+  )
+
 
 
       })

@@ -29,16 +29,18 @@ class ShowArtist extends React.Component {
     else{}
   }
    render() { 
+    console.log(this.props.ArtistData)
+
     return (
     <div className="ml-4" style={{width:"auto"}}>
         {this.props.ArtistData.map((item,index)=>
  <div  onMouseOver={this.show.bind(this,index)} onMouseOut={this.hide.bind(this,index)} className="card containers p-0 d-inline-block m-4" style={{"width":"17rem"}}>
-<Link to="/dashboard/Artist/artistInfo"  onClick={this.props.getInfoArtist.bind(this,item.name,item.images[0].url)} >
+<Link to="/dashboard/Artist/artistInfo"  onClick={this.props.getInfoArtist.bind(this,item.name,item.image)} >
 <div  id={index} className="content d-none">
-    <h1 className="ml-1">{item.name}</h1>
-    <p className="ml-2 ">Followers :  {Math.floor(item.followers.total/1000000)}M</p>
+    <h1 className="ml-3 my-5">{item.name}</h1>
+    {/* <p className="ml-2 ">Followers :  {Math.floor(item.followers.total/1000000)}M</p> */}
   </div>
-    <img src={item.images[0].url}  alt="..." style={{height:"250px",width:"100%"}}/>
+    <img src={item.image}  alt="..." style={{height:"250px",width:"100%"}}/>
     </Link>
       
       <br/>

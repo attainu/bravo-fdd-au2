@@ -11,7 +11,7 @@ export function fetchSearchResults(query){
    }
    
    export function ArtistData(){
-     let url = `https://raw.githubusercontent.com/attainu/bravo-fdd-au2/yashpal/data/artist.json?token=AI7UY72FSFLI3RFZR3XQDZC5XKOK2`
+     let url = `http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=271cbe482898bec42a2711e8df29b1e9&format=json`
      return fetch(url)
             .then(data => data.json());
    }

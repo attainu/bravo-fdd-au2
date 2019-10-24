@@ -1,12 +1,17 @@
 function Reducer(state={ArtistData:[],ArtistInfo:null,ArtistImage:null,ArtistTopTracks:null,url:[]},action){
+    let list
     switch(action.type){
 
 
 case "ArtistDataAction":
+        list=state.ArtistData.concat({
+            name:action.ArtistImage,
+            image : action.ArtistName
+        })
 
 return {
     ...state,
-    ArtistData: action.ArtistData
+    ArtistData: list
         }
 
  case "getinfoAction":
