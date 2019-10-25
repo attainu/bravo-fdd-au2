@@ -3,14 +3,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyDovSNjnI_I3cRF-39Pimtca_GPr8ObCNQ",
-  authDomain: "melomac-3d4bd.firebaseapp.com",
-  databaseURL: "https://melomac-3d4bd.firebaseio.com",
-  projectId: "melomac-3d4bd",
-  storageBucket: "",
-  messagingSenderId: "231651002619",
-  appId: "1:231651002619:web:8ebd55035353fbb1cb485e",
-  measurementId: "G-L2M12KSTBJ"
+  apiKey: "AIzaSyA6yU_z0TO6Qqpj71YQ_hTReBCBIkkRnNc",
+    authDomain: "melomac-app.firebaseapp.com",
+    databaseURL: "https://melomac-app.firebaseio.com",
+    projectId: "melomac-app",
+    storageBucket: "melomac-app.appspot.com",
+    messagingSenderId: "6267685758",
+    appId: "1:6267685758:web:546a0c3ff90b860369812f",
+    measurementId: "G-9FTFBCG89R"
 };
 firebase.initializeApp(config);
 

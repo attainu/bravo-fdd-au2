@@ -29,8 +29,8 @@ class Radiolist extends React.Component {
           />
         ))
     ) : (
-      <h3>Please wait while Connecting to station....</h3>
-    );
+        <h3>Please wait while Connecting to station....</h3>
+      );
     return (
       <div className="radiolist" style={{height:"80vh",overflowY:"scroll"}}>
         <div className="row">{showlist}</div>

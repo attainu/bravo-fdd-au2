@@ -14,7 +14,7 @@
     }
 
     .tags-title{
-        display: none;
+        display: flex;
         justify-content: center;
         align-content: center;
         font-style: bold;
@@ -25,9 +25,4 @@
         color: white;
     }
     
-    &:hover{
-        .tags-title{
-            display: flex;
-        }
-    }
 }

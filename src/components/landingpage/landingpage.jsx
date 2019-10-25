@@ -14,7 +14,7 @@ class LandingPage extends React.Component{
     // this.doRedirect = this.doRedirect.bind(this);
   }
   
-   async LoginwithGoogle(){
+  async LoginwithGoogle(){
     provider.setCustomParameters({ prompt: "select_account" });
     const result = await auth.signInWithPopup(provider);
     console.log(result);
