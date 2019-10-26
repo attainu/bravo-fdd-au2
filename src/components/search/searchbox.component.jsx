@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { MDBJumbotron, MDBBtn, MDBInputGroup,MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
 import { fetchSearchResults } from '../../api';
 import { searchQuery } from '../../actions/searchQueryActions';
 import './searchbox.styles.css';
@@ -45,7 +44,6 @@ function mapActionToProps(dispatch) {
       doSearch:function(event){
          event.preventDefault()
           let query = event.target.parentNode.parentNode.children[0].value
-          console.log(query);
           fetchSearchResults(query).then(result => 
             dispatch(searchQuery(result.response.hits)));
       }

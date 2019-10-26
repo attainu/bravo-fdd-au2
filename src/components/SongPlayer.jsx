@@ -42,7 +42,7 @@ class SongPlayer extends React.Component {
             </div>
           );
         } else {
-          media = songLink.filter(data => data.provider.includes("youtube"));
+          media = songLink
           //check if we got youtube link correctly or not
           let str = media[0].url;
           let url = str.slice(0, 23) + "embed/" + str.slice(31);

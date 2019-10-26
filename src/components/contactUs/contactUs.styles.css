@@ -7,6 +7,10 @@
   /* body{
     background-color: white;
   } */
+  .card-deck{
+    display: flex;
+    justify-content: space-evenly;
+  }
   .card-list{
     width:22rem;
     min-height: 18rem;

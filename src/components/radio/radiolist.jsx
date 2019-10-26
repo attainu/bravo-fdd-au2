@@ -40,7 +40,6 @@ class Radiolist extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("dashboard radio", state);
   return {
     fetched: state.RADIO_ST_Reducer.fetched,
     status: state.RADIO_ST_Reducer.status,

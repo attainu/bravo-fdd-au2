@@ -101,7 +101,6 @@ class RadioPlayer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("dashboard radio", state);
   return {
     fm: state.Selected_Radio_Reducer,
     status: state.Selected_Radio_Reducer.status,

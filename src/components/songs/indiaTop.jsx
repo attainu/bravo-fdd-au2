@@ -27,6 +27,7 @@ class India extends React.Component {
             </div>
             {this.props.tracks.track.map((item, i) => (
               <div className="cards" key={i*1000}>
+                  <Link to="/dashboard/songs/IndiaTop50">
                 <div className="card card-cascade wider">
                   <div className="view view-cascade overlay">
                     <Img
@@ -46,6 +47,7 @@ class India extends React.Component {
                     </h6>
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </div>

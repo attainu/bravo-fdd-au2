@@ -1,8 +1,7 @@
 import React from "react";
 import "./songs.css";
 import { connect } from "react-redux";
-import { getTop50Action, getSongs } from "../../actions/songsActions.js";
-import Img from "react-image";
+import { getTop50Action } from "../../actions/songsActions.js";
 import { fetchSearchResults } from "../../api";
 import SongPlayer from "../SongPlayer";
 import { Player } from "../../actions/ArtistAction";
@@ -32,33 +31,26 @@ class GlobalMore extends React.Component {
             className="scrollbar scrollbar-lady-lips scroll border border-dark"
             style={{ width: "100%", height: "100%" }}
           >
-            <table className="table table-border table-hover table1 w-100">
-              {this.props.charts ? (
-                <tbody>
-                  {this.props.charts.track.map((item, i) => (
-                    <tr className="tr1 hoverable" key={i}>
-                      {/* this.props.songs[i].response.hits[0].result.header_image_url */}
-                      <td
-                        className="td1"
-                        onClick={this.props.getLink.bind(this, item.name)}
-                      >
-                        <MDBIcon icon="play-circle" className="mr-2" />
-                        <Img
-                          className="global-more-image"
-                          src={this.props.songs[i]}
-                        />
-                        <h5>
-                          {item.name.charAt(0).toUpperCase() +
-                            item.name.slice(1, 20)}
-                        </h5>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              ) : (
-                <div>Loading....</div>
-              )}
-            </table>
+            {this.props.charts ? (
+             <div className="ml-3 mr-3">
+              <ul className="list-group list-group-flush">
+                {this.props.charts.track.map((item, i) => (
+                  <li
+                    key={i}
+                    onClick={this.props.getLink.bind(this, item.name)}
+                    className="list-group-item hoverable"
+                  >
+                    <MDBIcon icon="play-circle" className="mr-2" />
+                       {" "}
+                      {item.name.charAt(0).toUpperCase() +
+                        item.name.slice(1, 20)}
+                  </li>
+                ))}
+              </ul>
+              </div>
+            ) : (
+              <div>Loading....</div>
+            )}
           </div>
         </div>
       </div>
@@ -68,7 +60,6 @@ class GlobalMore extends React.Component {
 function mapStateToProps(state) {
   return {
     charts: state.getSongsReducer.globalTop50.tracks,
-    songs: state.getSongsReducer.globalSongs
   };
 }
 function mapDispatchToProps(dispatch) {
@@ -79,19 +70,19 @@ function mapDispatchToProps(dispatch) {
       ).then(response =>
         response.json().then(result => {
           dispatch(getTop50Action(result));
-          result.tracks.track.map((item, i) => {
-            let name = item.name.replace(/ /g, "%20");
-            let url = `https://api.genius.com/search?q=${name}&access_token=3vCOTKoZSLTmyGW-pxrVpH7KuD0eWyexTDhLiHbtNcvMjJR61SuF6tm39kBrmSY6`;
-            fetch(url)
-              .then(response => response.json())
-              .then(result => {
-                dispatch(
-                  getSongs(
-                    result.response.hits[0].result.header_image_thumbnail_url
-                  )
-                );
-              });
-          });
+          //   result.tracks.track.map((item, i) => {
+          //     let name = item.name.replace(/ /g, "%20");
+          //     let url = `https://api.genius.com/search?q=${name}&access_token=3vCOTKoZSLTmyGW-pxrVpH7KuD0eWyexTDhLiHbtNcvMjJR61SuF6tm39kBrmSY6`;
+          //     fetch(url)
+          //       .then(response => response.json())
+          //       .then(result => {
+          //         dispatch(
+          //           getSongs(
+          //             result.response.hits[0].result.header_image_thumbnail_url
+          //           )
+          //         );
+          //       });
+          //   });
         })
       );
     },

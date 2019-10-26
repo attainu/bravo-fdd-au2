@@ -56,7 +56,7 @@ const routes = [
     main:()=><Radio/>
   },
   {
-    path:"/dashboard/Artist/artistInfo",
+    path:"/dashboard/Artist/:artistname",
     exact:true,
     sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>

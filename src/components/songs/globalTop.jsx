@@ -23,7 +23,9 @@ class GlobalTop extends React.Component {
                 </Link>
               </div>
               {this.props.tracks.track.map((item, i) => (
-                <div className="cards">
+               
+                <div className="cards" key={i*1200}>
+                    <Link to="/dashboard/songs/globalTop50"> 
                   <div className="card card-cascade wider">
                     <div className="view view-cascade overlay">
                       <Img
@@ -32,7 +34,7 @@ class GlobalTop extends React.Component {
                         alt="Card image cap"
                       />
                     </div>
-
+                    
                     <div className="card-body card-body text-center pb-0">
                       <h6 className="card-title song-name">
                         {item.name.charAt(0).toUpperCase() +
@@ -43,7 +45,9 @@ class GlobalTop extends React.Component {
                       </h6>
                     </div>
                   </div>
+                  </Link>
                 </div>
+                
               ))}
             </div>
           ) : (

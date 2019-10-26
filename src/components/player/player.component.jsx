@@ -6,7 +6,6 @@ class Player extends React.Component{
 
 
     render(){
-        console.log("player component received props",this.props)
         let id = this.props.videoId;
         let element;
         if(id){
@@ -25,7 +24,6 @@ class Player extends React.Component{
 function mapStateToProps(state) {
 //    console.log("player received state",state)
    var media = state.songLinksreducer.media.filter(data => data.provider.includes("youtube"))
-   console.log("player media filtered state",media);
    if(media.length){
    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
    var match = media[0].url.match(regExp);

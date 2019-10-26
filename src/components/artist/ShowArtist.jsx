@@ -8,14 +8,15 @@ import "./showartist.styles.scss";
 class ShowArtist extends React.Component {
   render() {
     return (
-      <div className="ml-4" style={{ width: "auto" }}>
+      <div className="container mt-2" style={{ width: "auto" }}>
         {this.props.ArtistData.map((item, index) => (
           <div
             key={index * 100}
-            className="card containers p-0 d-inline-block m-4 hoverable"
+            className="card containers p-0 d-inline-block hoverable"
           >
             <Link
-              to="/dashboard/Artist/artistInfo"
+              to={{pathname:`/dashboard/Artist/${item.name}`
+                  }}
               onClick={this.props.getInfoArtist.bind(
                 this,
                 item.name,

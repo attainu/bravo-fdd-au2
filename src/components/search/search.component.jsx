@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchBox from './searchbox.component';
-import { Route,Switch }  from 'react-router-dom';
 import SearchResult from './searchresult.component';
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 import Player from '../player/player.component';
 
 
@@ -28,7 +27,6 @@ class Search extends React.Component{
     }
 
     render(){
-        console.log("render searcg result props",this.props)
         let medialength = this.props.songlink.length;
         let querylength = this.props.searchList.length;
         let element;
