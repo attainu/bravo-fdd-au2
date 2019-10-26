@@ -23,7 +23,7 @@ const routes = [
    
     path:"/dashboard/artist",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark text-center" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark text-center" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Artist</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -32,7 +32,7 @@ const routes = [
   {
     path:"/dashboard/songs",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -40,7 +40,7 @@ const routes = [
   },
   {
     path:"/dashboard/search",
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Search</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -49,7 +49,7 @@ const routes = [
   {
     path:"/dashboard/radio",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Radio</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
@@ -58,7 +58,7 @@ const routes = [
   {
     path:"/dashboard/Artist/artistInfo",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Artist</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">ArtistInfo</MDBBreadcrumbItem>
@@ -70,8 +70,8 @@ const routes = [
 
     path:"/dashboard/profile",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Profile</MDBBreadcrumbItem>
 
                 </MDBBreadcrumb>,
@@ -80,7 +80,7 @@ const routes = [
   {
     path:"/dashboard/songs/allTags",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Tags</MDBBreadcrumbItem>
@@ -90,7 +90,7 @@ const routes = [
   {
     path:"/dashboard/songs/IndiaTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">India Top 50</MDBBreadcrumbItem>
@@ -100,7 +100,7 @@ const routes = [
   {
     path:"/dashboard/songs/globalTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem className="ml-3">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Global Top 50</MDBBreadcrumbItem>
@@ -110,7 +110,7 @@ const routes = [
   {
     path:"/dashboard/songs/tags/:state",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Songs</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Tags</MDBBreadcrumbItem>
@@ -123,10 +123,9 @@ const routes = [
 ]
 
 class Dashboard extends React.Component {
-  render(props) {
+  render() {
     //  console.log(firebase.auth())
     let loggedIn = this.props.user; 
-        console.log("dashboard class",loggedIn);
         if(!loggedIn){
             return <Redirect to="/"/>
         }
@@ -196,7 +195,6 @@ class Dashboard extends React.Component {
 }
 
 function mapStateToProps(state){
-  console.log("dashboard state",state);
   return{
     user: state.loginReducer.loggedIn
   }

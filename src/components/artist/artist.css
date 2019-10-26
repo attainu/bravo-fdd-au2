@@ -25,7 +25,9 @@ body
   width: 17rem; /* Maximum width */
     
   }
-  
+  .list-group-item{
+      cursor: pointer;
+  }
   
   .containers .content {
     position: absolute; /* Position the background text */

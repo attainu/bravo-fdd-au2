@@ -9,7 +9,6 @@ class Tags extends React.Component {
     
     render(){
         let genere = image_urls().img;
-         console.log("gener: ",genere);
     return (
         <div className="songs">
             <div className="container">

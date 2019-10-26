@@ -17,7 +17,6 @@ class LandingPage extends React.Component{
   async LoginwithGoogle(){
     provider.setCustomParameters({ prompt: "select_account" });
     const result = await auth.signInWithPopup(provider);
-    console.log(result);
     localStorage.setItem('user',JSON.stringify(result.user.providerData[0]));
     this.props.doLogin();
     //this.doRedirect()
@@ -44,7 +43,6 @@ class LandingPage extends React.Component{
 
   render(){
     let loggedIn = this.props.user;
-    console.log("landing page render",loggedIn);
     if(loggedIn){
       return <Redirect exact to="/dashboard/songs" />
     }

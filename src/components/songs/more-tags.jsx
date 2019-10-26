@@ -20,7 +20,7 @@ class MoreTags extends React.Component {
                     <Link to={`/dashboard/songs/tags/${item.tag}`}>
                             <div class="card bg-dark text-white tag-card cards m-3">
                     <Img src={item.url} class="card-img tag-img images" alt="..." />
-                    <div class="card-img-overlay ">
+                    <div class="card-img-overlay">
                         <h5 class="card-title tags-title"><strong>{item.tag.charAt(0).toUpperCase()+item.tag.slice(1,20)}</strong></h5>
                     </div>
                 </div>

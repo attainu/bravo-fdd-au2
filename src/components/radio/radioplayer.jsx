@@ -33,7 +33,7 @@ class RadioPlayer extends React.Component {
   };
   render() {
     const fm = (
-      <audio controls class="mp3-auido" ref="fm" hidden>
+      <audio controls className="mp3-auido" ref="fm" hidden>
         <source src={this.props.fm.fm.st_url} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
