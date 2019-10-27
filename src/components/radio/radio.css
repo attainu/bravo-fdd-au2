@@ -1,0 +1,25 @@
+
+.playercompenents {
+    width: 30px;
+    margin-top: -120px;
+    margin-left:50px;
+    z-index: 0;
+    position: absolute;
+  }
+  .playercompenents img{
+    cursor: pointer;
+  }
+  .radiolist{
+    height: 550px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+   
+  }
+  .playercontent{
+    width: 700px;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 15px;
+  }
+ 

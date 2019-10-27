@@ -1,0 +1,32 @@
+.card{
+    width: 17rem;
+    height: 17rem;
+    position: relative;
+
+    .card-img-overlay{
+        display:flex;
+        flex-direction: column;
+        opacity: 0;
+
+        .play{
+            position: absolute;
+            top:50%;
+            left:30%;
+
+          button{
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            font-size: 12px; 
+            text-align: center;
+          } 
+        }
+    }
+
+    &:hover{
+        .card-img-overlay{
+            opacity: 0.9;
+        }
+    }
+}

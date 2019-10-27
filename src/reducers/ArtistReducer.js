@@ -1,23 +1,38 @@
-function Reducer(state={ArtistData:[],ArtistInfo:null},action){
-    switch(action.type){
+function Reducer(state = { ArtistData: [], ArtistInfo: null, ArtistImage: null, ArtistTopTracks: null, url: [] }, action) {
+    switch (action.type) {
 
 
-case "ArtistDataAction":
+        case "ArtistDataAction":
 
-return {
-    ...state,
-    ArtistData: action.ArtistData
+            return {
+                ...state,
+                ArtistData: action.ArtistData
+            }
+
+        case "getinfoAction":
+
+            return {
+                ...state,
+                ArtistInfo: action.ArtistInfo,
+                ArtistTopTracks: action.ArtistTopTracks
+            }
+        case "AristImage":
+
+        return {
+            ...state,
+            ArtistImage: action.url,
+            
         }
 
- case "getinfoAction":
+        case "Player":
 
-return {
-    ...state,
-    ArtistInfo: action.ArtistInfo
-        }
+            return {
+                ...state,
+                url: action.url
+            }
 
-        
-        default : return state;
+
+        default: return state;
     }
 }
 export default Reducer;

@@ -1,22 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { MDBBtn, MDBIcon} from "mdbreact";
 import { fetchSonglink } from "../../api";
 import { songLinks } from '../../actions/songlinkAction'
 
 function SearchResult(props) {
-    console.log("SearchResult function received",props)
     var len = props.searchresult.length
     return (
 
-        len?(<div style={{height:"400px",overflowY:"scroll",fontFamily:"'Fira Sans', sans-serif"}} className="z-depth-2 border border-primary rounded mb-0 p-2">
-            <table class="table table-borderless table-hover">
+        len?(<div style={{height:"500px",overflowY:"auto",fontFamily:"'Fira Sans', sans-serif",width:"100%"}} className="bg-dark">
+            <table className="table table-borderless table-hover">
                 <tbody>
-                   { props.searchresult.map((result,i)=><tr className="text-center hoverable">
-                                                        <th scope="row"><strong>{i+1}</strong></th>
+                   { props.searchresult.map((result,i)=><tr className="text-center hoverable" key={i*1000}>
+                                                        <th scope="row" className="text-white"><strong>{i+1}</strong></th>
                                                         <td><img src={result.result.header_image_thumbnail_url} width="30px" height="30px" className="mx-auto rounded-circle"/></td>
-                                                        <td><h6 className="mt-3"><strong>{result.result.full_title}</strong></h6></td>
+                                                        <td><h6 className="mt-3 text-white"><strong>{result.result.full_title}</strong></h6></td>
                                                         <td><MDBBtn color="light-blue" className="btn btn-sm mt-3 rounded" onClick={()=>props.getSongLink(result.result.id)}>
                                                         <MDBIcon icon="play" /><span> </span></MDBBtn></td>
                                                         </tr>)
@@ -31,7 +29,6 @@ function SearchResult(props) {
 }
 
 function mapStateToProps(state) {
-    console.log("Search result components received state",state);
     return {
         searchresult : state.searchQueryReducer.searchList
     }
@@ -40,10 +37,8 @@ function mapStateToProps(state) {
 function mapActionToProps(dispatch){
     return{
         getSongLink:function(id){
-            console.log(id);
             fetchSonglink(id)
-               .then(result => {console.log("fetchsongs api called on click",result.response.song.media)
-                                dispatch(songLinks(result.response.song.media))})
+               .then(result => dispatch(songLinks(result.response.song.media)))
             
         }
     }

@@ -3,6 +3,7 @@ import { connect} from 'react-redux';
 import { MDBNavbar,MDBNavbarBrand, MDBNavbarNav, MDBCollapse, MDBNavItem,MDBNavbarToggler,MDBBtn,MDBIcon,MDBDropdown,MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem} from 'mdbreact';
 import { auth } from "../../firebase/firebase.utils";
 import { logoutUser } from '../../actions/loginAction';
+import {Link} from 'react-router-dom';
 
 
 class DashboardHeader extends React.Component{
@@ -24,7 +25,6 @@ class DashboardHeader extends React.Component{
     
     render(){
         let loggedIn = JSON.parse(localStorage.getItem('user')); 
-        console.log(loggedIn);
         return(
             
             <MDBNavbar color="elegant-color-dark" fixed="top" dark expand="md" scrolling transparent>
@@ -53,6 +53,7 @@ class DashboardHeader extends React.Component{
                             </MDBDropdownToggle>
                             <MDBDropdownMenu className="mr-3">
                                 <MDBDropdownItem className="text-center">
+                                    <Link to="/dashboard/profile">
                                 <MDBBtn
                                         color="primary"
                                         size="sm"
@@ -62,6 +63,7 @@ class DashboardHeader extends React.Component{
                                     <MDBIcon icon="user-circle" /> <span> </span>
                                     <strong>Profile</strong>
                                     </MDBBtn>
+                                    </Link>
                                 </MDBDropdownItem>
                                 <MDBDropdownItem>
                                     <MDBBtn

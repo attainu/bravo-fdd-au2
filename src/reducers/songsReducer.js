@@ -38,7 +38,9 @@ function getSongsReducer(state= initialState, action){
                 ...state, globalSongs: state.globalSongs.concat(action.payload)
             }
         case "GET_LINK":
+            // console.log(state.youtubeLink)
             return{
+                
                 ...state, youtubeLink: action.payload
             }
         case "GET_INDIA_TOP_50":

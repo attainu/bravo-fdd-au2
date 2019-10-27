@@ -1,0 +1,61 @@
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: 10px 10px 0px 0px;
+    z-index: 9;
+    width: 20%; 
+}
+/* .container{
+    overflow-y: scroll;
+} */
+#more {display: none;}
+
+.containers {
+    position: relative;
+  width: 17rem; /* Maximum width */
+    
+  }
+  .list-group-item{
+      cursor: pointer;
+  }
+  
+  .containers .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    height: 100%;
+  
+  }
+  code {
+    font-family: "Quicksand";
+  }
+  ::-webkit-scrollbar-track
+  {
+  
+      background-color: black;
+  }
+  
+  ::-webkit-scrollbar
+  {
+      width: 0px;
+      background-color: black;
+  }
+  
+  ::-webkit-scrollbar-thumb
+  {
+  
+      background-color:black;
+  }
