@@ -17,14 +17,14 @@ export function ArtistData(){
 }
 
 export function ArtistGetInfo(ArtistName) {
-       let url = `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${ArtistName}&api_key=271cbe482898bec42a2711e8df29b1e9&format=json`
+       let url = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${ArtistName}&api_key=271cbe482898bec42a2711e8df29b1e9&format=json`
        return fetch(url)
               .then(data => data.json());
 
 }
 
 export function ArtistGetTopTrack(ArtistName) {
-       let url = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${ArtistName}&api_key=271cbe482898bec42a2711e8df29b1e9&format=json`
+       let url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${ArtistName}&api_key=271cbe482898bec42a2711e8df29b1e9&format=json`
        return fetch(url)
               .then(data => data.json());
 
