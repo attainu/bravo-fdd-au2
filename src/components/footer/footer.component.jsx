@@ -7,7 +7,7 @@ import {
   MDBBtn,
   MDBIcon
 } from "mdbreact";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const FooterPagePro = () => {
@@ -63,10 +63,10 @@ const FooterPagePro = () => {
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#!">API Links</a>
+                <a href="https://www.last.fm/api/" target="blank">API</a>
               </li>
               <li>
-                <a href="#!">Github Links</a>
+                <a href="https://github.com/attainu/bravo-fdd-au2" target="blank">Github</a>
               </li>
             </ul>
           </MDBCol>
