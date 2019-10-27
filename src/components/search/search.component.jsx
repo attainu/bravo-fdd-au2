@@ -15,7 +15,7 @@ class Search extends React.Component{
     
     renderBothPlaylistAndMedia=()=>{
         return (
-            <MDBRow className="bg-dark pt-2">
+            <MDBRow className="bg-dark pt-2 ml-5">
             <MDBCol size="6">
                     <Player/>
             </MDBCol>

@@ -22,6 +22,11 @@ class ContactUsPage extends React.Component {
     });
   }
 
+  handleFormClick(e){
+     e.preventDefault();
+     alert("Mail sent");
+  }
+
   render() {
     return (
       <div className="bg-white">
@@ -132,7 +137,7 @@ class ContactUsPage extends React.Component {
                 />
               </div>
               <div className="text-center py-4 mt-3">
-                <MDBBtn className="rounded-pill" color="light-blue" type="submit">
+                <MDBBtn className="rounded-pill" color="light-blue" type="submit" onClick={this.handleFormClick}>
                   Submit
                   </MDBBtn>
               </div>
