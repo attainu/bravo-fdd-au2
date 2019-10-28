@@ -66,7 +66,7 @@ function mapDispatchToProps(dispatch) {
   return {
     getSongs: function() {
       fetch(
-        "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json"
+        "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json"
       ).then(response =>
         response.json().then(result => {
           dispatch(getTop50Action(result));

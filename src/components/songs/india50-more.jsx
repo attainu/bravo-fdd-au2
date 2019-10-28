@@ -68,7 +68,7 @@ function mapDispatchToProps(dispatch) {
   return {
     getSongs: function() {
       fetch(
-        "http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=india&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json"
+        "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=india&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json"
       ).then(response =>
         response.json().then(result => {
           dispatch(getIndiaTop50Action(result));

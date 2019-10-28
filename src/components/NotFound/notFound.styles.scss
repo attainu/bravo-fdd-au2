@@ -1,0 +1,19 @@
+.nofound{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+    
+    .four{
+        width:20rem;
+        height: 20rem;
+    }
+    .logo{
+        width:20rem;
+        height: 20rem;
+    }
+}
+
+.msg{
+    margin-left:70%;
+}

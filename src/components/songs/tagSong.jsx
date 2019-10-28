@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  getTagTop50Action,
-  getSongLink,
-  getSongs
+  getTagTop50Action
 } from "../../actions/songsActions";
-import Img from "react-image";
 import SongPlayer from "../SongPlayer";
 import "./songs.css";
 import { fetchSearchResults } from "../../api";
@@ -14,7 +11,10 @@ import { MDBIcon } from "mdbreact";
 
 class TagSongs extends React.Component {
   componentDidMount() {
-    this.props.getTagSongs();
+    let tagName = window.location.pathname.slice(
+                 window.location.pathname.lastIndexOf('/')+1,100)
+                .replace(/%20/g," ");
+    this.props.getTagSongs(tagName);
   }
   render() {
     // console.log("tag songs render",this.props.tagSong, this.props.images);
@@ -69,10 +69,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getTagSongs: function() {
-      let tag = window.location.href.slice(43, 100);
-      if (tag.includes("-")) tag = tag.replace(/-/g, " ");
-      let url = `http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${tag}&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json`;
+    getTagSongs: function(tagName) {
+      if (tagName.includes("-")) tagName = tagName.replace(/-/g, " ");
+      let url = `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${tagName}&api_key=f77fce611dba3185e9c5c0cf2fcc32db&format=json`;
       //console.log(tag, url)
       fetch(url)
         .then(response => response.json())

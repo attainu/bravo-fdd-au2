@@ -62,7 +62,6 @@ const routes = [
                   <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Artist</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">ArtistInfo</MDBBreadcrumbItem>
-
                 </MDBBreadcrumb>,
     main:()=><ArtistInfo/>
   },

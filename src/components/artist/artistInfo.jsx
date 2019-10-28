@@ -1,16 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ArtistGetSongs, ArtistGetPlayer } from "../../api";
-import { Player } from "../../actions/ArtistAction";
+import { useParams } from 'react-router-dom';
+import { ArtistGetSongs, ArtistGetPlayer , ArtistGetInfo, ArtistGetTopTrack , ArtistData } from "../../api";
+import { Player , getInfo } from "../../actions/ArtistAction";
 import "./artist.css";
 import ReadMoreAndLess from "react-read-more-less";
 import { MDBIcon } from "mdbreact";
 import SongPlayer from "../SongPlayer";
 
 class ArtistInfo extends React.Component {
+  
+   constructor(){
+     super()
+      this.state = {
+        id :  ""
+      }
+   }
+
+  async componentDidMount(){
+    let artistName = window.location.pathname.slice(
+                      window.location.pathname.lastIndexOf('/')+1,100)
+                      .replace(/%20/g," ");
+    let artistImageLink = await ArtistData().then(result => result.artists.filter(i=>i.name.includes(artistName))[0].images[0].url)
+    this.props.getInfoArtist(artistName,artistImageLink);
+  }
+
   render() {
     if (this.props.ArtistInfo == null) {
-      return <h1>Get Artist Name</h1>;
+      return <h3 className="text-dark display-3">...Loading</h3>;
     } else {
       return (
         <div className="container mb-3">
@@ -124,6 +141,19 @@ function mapStateToProps(state) {
 
 function mapActionToProps(dispatch) {
   return {
+    getInfoArtist: function(ArtistName, ArtistImage) {
+      ArtistGetInfo(ArtistName).then(ArtistInfo => {
+        ArtistGetTopTrack(ArtistName).then(ArtistTopTracks => {
+          dispatch(
+            getInfo(
+              ArtistInfo.artist,
+              ArtistImage,
+              ArtistTopTracks.toptracks.track
+            )
+          );
+        });
+      });
+    },
     getSongs: function(SongName) {
       // console.log(SongName)
       ArtistGetSongs(SongName).then(SongResult => {

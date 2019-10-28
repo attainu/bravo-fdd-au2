@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBContainer, MDBMask, MDBView, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBMask, MDBView, MDBCardImage, MDBCardTitle, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../logo.svg';
 import "../contactUs/contactUs.styles.css";
@@ -117,6 +117,7 @@ class ContactUsPage extends React.Component {
                   validate
                   error="wrong"
                   success="right"
+                  required
                 />
                 <MDBInput
                   label="Email Address"
@@ -126,6 +127,7 @@ class ContactUsPage extends React.Component {
                   validate
                   error="wrong"
                   success="right"
+                  required
                 />
 
                 <MDBInput
@@ -134,6 +136,7 @@ class ContactUsPage extends React.Component {
                   group
                   type="textarea"
                   rows="1"
+                  required
                 />
               </div>
               <div className="text-center py-4 mt-3">

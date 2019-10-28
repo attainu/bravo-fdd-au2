@@ -2,7 +2,7 @@ import React from 'react'
 import './songs.css';
 import Img from 'react-image';
 import image_urls from '../../tags-images/images';
-import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class Tags extends React.Component {

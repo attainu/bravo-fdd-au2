@@ -1,11 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ArtistGetInfo, ArtistGetTopTrack } from "../../api";
-import { getInfo } from "../../actions/ArtistAction";
+import { ArtistData } from "../../api";
+import { getData } from "../../actions/ArtistAction";
 import { Link } from "react-router-dom";
 import "./showartist.styles.scss";
 
 class ShowArtist extends React.Component {
+  
+  componentDidMount() {
+    this.props.ShowArtist();
+  }
+
   render() {
     return (
       <div className="container mt-2" style={{ width: "auto" }}>
@@ -15,13 +20,7 @@ class ShowArtist extends React.Component {
             className="card containers p-0 d-inline-block hoverable"
           >
             <Link
-              to={{pathname:`/dashboard/Artist/${item.name}`
-                  }}
-              onClick={this.props.getInfoArtist.bind(
-                this,
-                item.name,
-                item.images[0].url
-              )}
+              to={`/dashboard/Artist/${item.name}`}
             >
               <div id={index} className="content">
                 <h1 className="name">{item.name}</h1>
@@ -51,17 +50,9 @@ function mapStateToProps(state) {
 
 function mapActionToProps(dispatch) {
   return {
-    getInfoArtist: function(ArtistName, ArtistImage) {
-      ArtistGetInfo(ArtistName).then(ArtistInfo => {
-        ArtistGetTopTrack(ArtistName).then(ArtistTopTracks => {
-          dispatch(
-            getInfo(
-              ArtistInfo.artist,
-              ArtistImage,
-              ArtistTopTracks.toptracks.track
-            )
-          );
-        });
+    ShowArtist: function() {
+      ArtistData().then(result => {
+        dispatch(getData(result.artists));
       });
     }
   };
