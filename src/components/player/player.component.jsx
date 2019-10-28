@@ -9,7 +9,9 @@ class Player extends React.Component{
         let id = this.props.videoId;
         let element;
         if(id){
-           element =  <iframe className="videoplayer" src={`https://www.youtube.com/embed/${id}?rel=0`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen width="100%" height="550px"></iframe>
+         element = <div>
+                        <iframe src={`https://www.youtube.com/embed/${id}?rel=0`} height="400px" width="100%" allowFullScreen></iframe>
+                    </div>
         }else{
            element = <div>loading ....</div>
         }

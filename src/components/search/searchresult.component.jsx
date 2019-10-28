@@ -8,7 +8,7 @@ function SearchResult(props) {
     var len = props.searchresult.length
     return (
 
-        len?(<div style={{height:"500px",overflowY:"auto",fontFamily:"'Fira Sans', sans-serif",width:"100%"}} className="bg-dark">
+        len?(<div style={{height:"400px",overflowY:"auto",fontFamily:"'Fira Sans', sans-serif",width:"100%"}} className="bg-dark">
             <table className="table table-borderless table-hover">
                 <tbody>
                    { props.searchresult.map((result,i)=><tr className="text-center hoverable" key={i*1000}>

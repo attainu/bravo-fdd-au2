@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './search.styles.scss';
 import SearchBox from './searchbox.component';
 import SearchResult from './searchresult.component';
 import { MDBRow, MDBCol } from "mdbreact";
@@ -14,15 +15,11 @@ class Search extends React.Component{
     }
     
     renderBothPlaylistAndMedia=()=>{
-        return (
-            <MDBRow className="bg-dark pt-2 p-3 ml-5">
-            <MDBCol size="6">
-                    <Player/>
-            </MDBCol>
-            <MDBCol size="6">
+        return ( 
+            <div className="player">
+                <Player></Player>
                 <SearchResult/>
-            </MDBCol>
-            </MDBRow>
+            </div>
         )
     }
 
