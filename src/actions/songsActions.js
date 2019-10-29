@@ -24,7 +24,6 @@ export function IndiaTopSongsAction(tracks){
 }
 
 export function GetIndiaImagesAction(img){
-    console.log("GetIndiaImagesAction", img);
     return{
         type: "GET_INDIA_IMAGES",
         Image: img 

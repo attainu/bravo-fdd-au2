@@ -33,7 +33,7 @@ class RadioPlayer extends React.Component {
   };
   render() {
     const fm = (
-      <audio controls class="mp3-auido" ref="fm" hidden>
+      <audio controls className="mp3-auido" ref="fm" hidden>
         <source src={this.props.fm.fm.st_url} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
@@ -55,7 +55,7 @@ class RadioPlayer extends React.Component {
               <img
                 onClick={this.toggler_handler}
                 height="50"
-                src="https://www.iconsdb.com/icons/preview/white/pause-xxl.png"
+                src="https://i.ibb.co/D7Vr10d/pause-xxl.png"
                 alt="pause"
               />
               <div className="playercontent">
@@ -101,7 +101,6 @@ class RadioPlayer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("dashboard radio", state);
   return {
     fm: state.Selected_Radio_Reducer,
     status: state.Selected_Radio_Reducer.status,

@@ -1,0 +1,27 @@
+.card{
+    width:17rem;
+    position: relative;
+    
+    .content{
+        display: none;
+        flex-direction: column;
+
+        .name{
+            position: absolute;
+            top:10%;
+            left:10%;
+            font-size: 20px;
+        }
+        .followers{
+            position: absolute;
+            bottom: 0;
+            right:5%;
+        }
+
+    }
+    &:hover{
+        .content{
+            display: flex;
+        }
+    }
+}

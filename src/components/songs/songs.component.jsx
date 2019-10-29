@@ -8,8 +8,8 @@ class Songs extends React.Component {
     render(){
     return (
         <div>
-        <h3 className="display-3 text-dark mx-auto "> Top Songs </h3>
-        <div className="overflow-auto text-dark" style={{height:"600px"}}>
+        <h3 className="display-3 text-white mx-auto "> Top Songs </h3>
+        <div className="overflow-auto text-dark" style={{height:"80vh"}}>
             <br/>
             <GlobalTop /><br/>
             <hr/>

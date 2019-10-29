@@ -4,8 +4,12 @@
     letter-spacing: 1.5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  body{
+  /* body{
     background-color: white;
+  } */
+  .card-deck{
+    display: flex;
+    justify-content: space-evenly;
   }
   .card-list{
     width:22rem;

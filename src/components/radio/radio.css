@@ -1,11 +1,13 @@
+
 .playercompenents {
     width: 30px;
     margin-top: -120px;
     margin-left:50px;
     z-index: 0;
     position: absolute;
-    
-    
+  }
+  .playercompenents img{
+    cursor: pointer;
   }
   .radiolist{
     height: 550px;

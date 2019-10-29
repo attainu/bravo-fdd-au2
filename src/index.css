@@ -16,20 +16,23 @@ body {
 code {
   font-family: "Quicksand";
 }
+
 ::-webkit-scrollbar-track
 {
-    border-radius: 10px;
-    background-color: #343a40;
+	border-radius: 10px;
+	background-color: #343a40;
 }
 
 ::-webkit-scrollbar
 {
-    width: 12px;
-    background-color: #343a40;
+	width: 12px;
+	background-color: #343a40;
 }
 
 ::-webkit-scrollbar-thumb
 {
-    border-radius: 10px;
-    background-color:#343a40;
+	border-radius: 10px;
+	background-color:#343a40;
 }
+/* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", */
+/* monospace; */

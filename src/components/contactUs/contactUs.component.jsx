@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBContainer, MDBMask, MDBView, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBMask, MDBView, MDBCardImage, MDBCardTitle, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../logo.svg';
 import "../contactUs/contactUs.styles.css";
@@ -22,9 +22,14 @@ class ContactUsPage extends React.Component {
     });
   }
 
+  handleFormClick(e){
+     e.preventDefault();
+     alert("Mail sent");
+  }
+
   render() {
     return (
-      <div>
+      <div className="bg-white">
         <header>
           <Router>
             <MDBNavbar color="elegant-color-dark" fixed="top" dark expand="md" scrolling transparent>
@@ -43,7 +48,7 @@ class ContactUsPage extends React.Component {
           </Router>
           <MDBView src="https://i.ibb.co/tBj3m13/1-Ed-W47-D2k-Ir-Vu-Kzj-BDUlg-Q.jpg">
             <MDBMask overlay="stylish-strong" className="flex-center flex-column text-white text-center">
-              <h2><b>Contact us to hire us...</b></h2>
+              <h3 className="display-3"><b>Contact us to hire us...</b></h3>
               <h5>Thanks for visiting this page.</h5>
               <p>We are a group of enthusiastic,smart and hardworking people who likes to work on different tech to solve real world problems</p><br />
               <p>If you like the site,do contact individuals or mail us</p>
@@ -51,9 +56,10 @@ class ContactUsPage extends React.Component {
           </MDBView>
         </header>
         {/* cards for team members*/}
-        <main>
+        <div className="container-fluid">
+          <div className="jumbotron-fluid">
           <div className="card-deck">
-            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable">
+            <MDBCard className="card-list  mt-3 p-2  text-center hoverable">
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Suraj</MDBCardTitle>
@@ -61,7 +67,7 @@ class ContactUsPage extends React.Component {
                 <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/surajk76/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list  mt-3 p-2  text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Lakshmikanth</MDBCardTitle>
@@ -69,7 +75,7 @@ class ContactUsPage extends React.Component {
                 <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/lakshmikanth-reddy-930b9898/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list  mt-3 p-2  text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Harika</MDBCardTitle>
@@ -77,7 +83,7 @@ class ContactUsPage extends React.Component {
                 <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/harika-thipparthi-a97b51186/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list  mt-3 p-2  text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Naveen</MDBCardTitle>
@@ -85,7 +91,7 @@ class ContactUsPage extends React.Component {
                 <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/naveen-bandela-367176b6/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
-            <MDBCard className="card-list ml-3 mt-3 p-2 mr-3 text-center hoverable" style={{ width: "22rem" }}>
+            <MDBCard className="card-list  mt-3 p-2  text-center hoverable" style={{ width: "22rem" }}>
               <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
               <MDBCardBody>
                 <MDBCardTitle>Yash</MDBCardTitle>
@@ -93,6 +99,7 @@ class ContactUsPage extends React.Component {
                 <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/yashpal-nimesh-91181b185/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
+          </div>
           </div>
           <hr />
 
@@ -110,6 +117,7 @@ class ContactUsPage extends React.Component {
                   validate
                   error="wrong"
                   success="right"
+                  required
                 />
                 <MDBInput
                   label="Email Address"
@@ -119,6 +127,7 @@ class ContactUsPage extends React.Component {
                   validate
                   error="wrong"
                   success="right"
+                  required
                 />
 
                 <MDBInput
@@ -127,10 +136,11 @@ class ContactUsPage extends React.Component {
                   group
                   type="textarea"
                   rows="1"
+                  required
                 />
               </div>
               <div className="text-center py-4 mt-3">
-                <MDBBtn className="rounded-pill" color="light-blue" type="submit">
+                <MDBBtn className="rounded-pill" color="light-blue" type="submit" onClick={this.handleFormClick}>
                   Submit
                   </MDBBtn>
               </div>
@@ -139,7 +149,7 @@ class ContactUsPage extends React.Component {
           </MDBCol>
 
 
-        </main>
+        </div>
       </div>
     );
   }

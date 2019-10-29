@@ -23,8 +23,8 @@ const routes = [
    
     path:"/dashboard/artist",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark text-center" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark text-center" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Artist</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Artist/>
@@ -32,16 +32,16 @@ const routes = [
   {
     path:"/dashboard/songs",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Songs/>
   },
   {
     path:"/dashboard/search",
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Search</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Search/>
@@ -49,20 +49,19 @@ const routes = [
   {
     path:"/dashboard/radio",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-5">
-                  <MDBBreadcrumbItem >DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">Radio</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><Radio/>
   },
   {
-    path:"/dashboard/Artist/artistInfo",
+    path:"/dashboard/Artist/:artistname",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Artist</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem active className="text-white">ArtistInfo</MDBBreadcrumbItem>
-
                 </MDBBreadcrumb>,
     main:()=><ArtistInfo/>
   },
@@ -70,8 +69,8 @@ const routes = [
 
     path:"/dashboard/profile",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="primary-color" className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
                   <MDBBreadcrumbItem  className="text-white">Profile</MDBBreadcrumbItem>
 
                 </MDBBreadcrumb>,
@@ -80,36 +79,41 @@ const routes = [
   {
     path:"/dashboard/songs/allTags",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Tags</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Tags</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><MoreTags />
   },
   {
     path:"/dashboard/songs/IndiaTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/India Top 50</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-2">
+                  <MDBBreadcrumbItem className="ml-5">DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">India Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><IndiaMore />
   },
   {
     path:"/dashboard/songs/globalTop50",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
-                  <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Global Top 50</MDBBreadcrumbItem>
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
+                  <MDBBreadcrumbItem className="ml-3">DashBoard</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Global Top 50</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><GlobalMore />
   },
   {
     path:"/dashboard/songs/tags/:state",
     exact:true,
-    sidebar:()=><MDBBreadcrumb dark color="bg-dark"  className="ml-3 rounded">
+    sidebar:()=><MDBBreadcrumb color="bg-dark" className="ml-5">
                   <MDBBreadcrumbItem>DashBoard</MDBBreadcrumbItem>
-                  <MDBBreadcrumbItem active className="text-white">Songs/Tags/Tag Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Songs</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem  className="text-white">Tags</MDBBreadcrumbItem>
+                  <MDBBreadcrumbItem active className="text-white">Tag Songs</MDBBreadcrumbItem>
                 </MDBBreadcrumb>,
     main:()=><TagSongs />
 
@@ -118,10 +122,9 @@ const routes = [
 ]
 
 class Dashboard extends React.Component {
-  render(props) {
+  render() {
     //  console.log(firebase.auth())
     let loggedIn = this.props.user; 
-        console.log("dashboard class",loggedIn);
         if(!loggedIn){
             return <Redirect to="/"/>
         }
@@ -131,7 +134,7 @@ class Dashboard extends React.Component {
       <div>     
         <MDBRow style={{width:"100vw"}}>
         <MDBCol className="text-white bg-dark shadow-lg">
-          <Logo style={{width:"10rem",height:"12rem",marginLeft:"5rem",marginTop:"1rem"}}/>
+          <Logo  className="logo"/>
           <h1  className="text-center"
                 style={{
                   fontFamily: "Quicksand, sans-serif",
@@ -191,7 +194,6 @@ class Dashboard extends React.Component {
 }
 
 function mapStateToProps(state){
-  console.log("dashboard state",state);
   return{
     user: state.loginReducer.loggedIn
   }

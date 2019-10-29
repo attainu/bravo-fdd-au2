@@ -32,7 +32,7 @@ class Radiolist extends React.Component {
         <h3>Please wait while Connecting to station....</h3>
       );
     return (
-      <div className="radiolist">
+      <div className="radiolist" style={{height:"80vh",overflowY:"scroll"}}>
         <div className="row">{showlist}</div>
       </div>
     );
@@ -40,7 +40,6 @@ class Radiolist extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("dashboard radio", state);
   return {
     fetched: state.RADIO_ST_Reducer.fetched,
     status: state.RADIO_ST_Reducer.status,

@@ -25,7 +25,6 @@ class DashboardHeader extends React.Component{
     
     render(){
         let loggedIn = JSON.parse(localStorage.getItem('user')); 
-        console.log(loggedIn);
         return(
             
             <MDBNavbar color="elegant-color-dark" fixed="top" dark expand="md" scrolling transparent>

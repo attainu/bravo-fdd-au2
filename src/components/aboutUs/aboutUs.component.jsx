@@ -85,7 +85,7 @@ class AboutUsPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg-white" style={{height:"100vh"}}>
         <header>
           <Router>
             <MDBNavbar color="elegant-color-dark" fixed="top" dark expand="md" scrolling>
