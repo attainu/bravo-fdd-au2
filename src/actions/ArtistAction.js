@@ -1,7 +1,15 @@
-export function getData(result){
+export function getData(name,image){
     return{
     type:"ArtistDataAction",
-ArtistData:result
+ArtistName:name,
+ArtistImage:image
+    }
+        
+}
+
+export function HideData(){
+    return{
+    type:"HideAction"
     }
         
 }

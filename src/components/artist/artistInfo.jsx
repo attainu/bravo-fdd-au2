@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {ArtistGetSongs,ArtistGetPlayer} from '../../api'
+import {fetchSearchResults,fetchSonglink, fetchYoutube} from '../../api'
 import {Player} from '../../actions/ArtistAction'
 import './artist.css'
-import ReadMoreReact from 'read-more-react';
 import ReadMoreAndLess from 'react-read-more-less';
 import {
   MDBIcon
@@ -27,9 +26,9 @@ return <h1>Get Artist Name</h1>
       <div class="container overflow-auto text-dark w-100" style={{height:"600px",width:"auto"}}>
     <div class="fb-profile text-dark " style={{width:"auto"}}>
 
-        <img align="left"  style={{height:"300px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="Profile image example"/>
-        <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="Profile image example"/>
-   
+        <img align="left"  style={{height:"300px",width:"100%"}} class="fb-image-lg" src="https://highland-music.com/wp-content/uploads/2016/04/Blue-Background-Music-Headphone-Wallpaper-Picture-HD-Free-298292334-e1459743028815.png"alt="..."/>
+        <img align="left" style={{height:"250px",width:"250px"}} class="fb-image-profile thumbnail" src={this.props.ArtistImage} alt="..."/>
+        
         
     </div>
     <h1 >{this.props.ArtistInfo.name}</h1>
@@ -123,7 +122,7 @@ function mapStateToProps(state){
     return {
       getSongs: function(SongName) {
           // console.log(SongName)
-            ArtistGetSongs(SongName)
+            fetchSearchResults(SongName)
     .then(
       (SongResult) => {
     // console.log(SongResult)
@@ -131,16 +130,21 @@ function mapStateToProps(state){
 // console.log(SongResult)
     }
     else{
-    ArtistGetPlayer(SongResult.response.hits[0].result.id)
+    fetchSonglink(SongResult.response.hits[0].result.id)
     .then(
       (PlayerResult) => {
         // console.log(PlayerResult.response.song.media)
         if(PlayerResult.response.song.media.length===0){
 // console.log("PlayerResult:- "+PlayerResult)
+fetchYoutube(SongName)
+.then( result => 
+  dispatch(Player(result))
+  
+  )
            
         }
 else{
-// console.log("PlayerResult:- "+PlayerResult.response.song.media)
+// console.log(JSON.stringify(PlayerResult))
 
          dispatch(Player(PlayerResult.response.song.media))
 
