@@ -96,7 +96,7 @@ class ContactUsPage extends React.Component {
               <MDBCardBody>
                 <MDBCardTitle>Yash</MDBCardTitle>
 
-                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/yash-pal-91181b185/">See Profile</MDBBtn>
+                <MDBBtn className="rounded-pill" color="light-blue" href="https://www.linkedin.com/in/yashpal-nimesh-91181b185/">See Profile</MDBBtn>
               </MDBCardBody>
             </MDBCard>
           </div>
