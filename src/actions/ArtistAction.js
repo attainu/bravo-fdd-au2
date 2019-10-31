@@ -31,6 +31,3 @@ export function Player(url){
         }
             
     }
-
-    
-    
