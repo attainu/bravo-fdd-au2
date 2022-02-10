@@ -9,7 +9,7 @@
     "add-class": "^1.0.3",
     "firebase": "7.0.0",
     "mdbreact": "4.21.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-fontawesome": "1.6.1",
